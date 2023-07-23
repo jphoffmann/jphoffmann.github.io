@@ -1,0 +1,31 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+    font-family: 'DM Sans';
+    font-size: 18px;
+    src: url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+}
+
+* {
+    font-family: "DM Sans", sans-serif;
+}
+
+@layer base{
+    body {
+        @apply mx-8 xl:mx-80 my-1 xl:my-20
+               bg-grey text-dark-grey min-w-[640px]
+    }
+
+    h2 {
+        @apply text-lg font-medium uppercase
+    }
+}
+
+
+
+

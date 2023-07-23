@@ -12,6 +12,9 @@ const config = {
     paths: {
       base: '/jphoffmann.github.io',
     },
+    alias: {
+      $components: 'src/components',
+    },
   },
 
   preprocess: [vitePreprocess({})],
