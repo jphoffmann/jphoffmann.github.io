@@ -1,21 +1,14 @@
 <script>
     import "../app.css";
+    import {base} from "$app/paths";
 </script>
 
-<style>
-    nav a {
-        padding-left: 1rem;
-    }
-</style>
-
-<header class="flex justify-between sticky top-0 z-10 bg-grey pt-2 pb-2 mb-72">
-    <a href="/">
-        <b class="text-4xl">jh.</b>
-    </a>
+<header class="flex justify-between sticky top-0 z-10 bg-grey py-2">
+    <a class="text-4xl font-bold" href="/" >jh.</a>
     <nav class="text-xl font-medium">
-        <a href="#Projects">Projects</a>
-        <a href="#About">About</a>
-        <a href="#Contact">Contact</a>
+        <a href="{base}/#Projects">Projects</a>
+        <a class="pl-4" href="{base}/#About">About</a>
+        <!--<a class="pl-4" href="{base}/#Contact">Contact</a>-->
     </nav>
 </header>
 

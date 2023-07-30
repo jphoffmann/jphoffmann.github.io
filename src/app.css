@@ -17,12 +17,32 @@
 
 @layer base{
     body {
-        @apply mx-8 xl:mx-80 my-1 xl:my-20
-               bg-grey text-dark-grey min-w-[640px]
+        @apply max-w-[1800px] min-w-[350px] mx-auto my-1 laptop:my-10 px-8 laptop:px-20
+               bg-grey text-dark-grey
     }
 
     h2 {
         @apply text-lg font-medium uppercase
+    }
+
+    section {
+        @apply  laptop:my-16
+    }
+
+    .logo {
+        @apply pb-2 tablet:mx-auto max-w-[160px] max-h-[40px] tablet:max-w-[320px] laptop:max-h-[80px] min-w-[80px] min-h-[20px]
+    }
+}
+
+@layer components {
+    .btn {
+        @apply font-bold py-2 px-4 rounded;
+    }
+    .btn-blue {
+        @apply border border-medium-blue text-medium-blue transition ease-in-out;
+    }
+    .btn-blue:hover {
+        @apply bg-medium-blue text-white;
     }
 }
 

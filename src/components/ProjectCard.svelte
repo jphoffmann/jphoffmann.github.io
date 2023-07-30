@@ -1,54 +1,62 @@
-<script>
+<script lang="ts"
+        type="text/javascript"
+        src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
+
+    import {base} from "$app/paths";
+    import {Project} from "/src/project.ts";
+    import MockupPhone from "$components/MockupPhone.svelte";
+
+    export let project: Project;
+
+    //Optional override of project information:
     export let title;
     export let date;
     export let desc;
     export let tech;
 </script>
 
-<style>
-    .project-card {
-        display: grid;
-        grid-template-columns: 30% 60%;
-        grid-gap: 0 10%;
-        padding: 5rem 0 5rem 0
-    }
+<article class="flex flex-wrap-reverse py-10 laptop:py-20 ">
 
-    .project-info > * {
-        padding-bottom: 1.5rem;
-    }
+    <!-- Description -->
+    <div class="laptop:w-[35%] px-2 tablet:px-0 laptop:pr-6">
+        <h2 class="text-2xl font-bold">{title ? title : project.title}</h2>
 
-    @media screen and (max-width: 1280px) {
-        .project-card {
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: space-between;
-            padding: 2rem 0 2rem 0
-        }
-    }
-</style>
+        <p class="mb-6 text-sm text-neutral-500 dark:text-neutral-400">{date ? date : project.date}</p>
 
-<article class="project-card">
-    <div class="project-info flex flex-col justify-start">
+        {#if project || desc}
+            <p class="mb-6 text-neutral-500 dark:text-neutral-300">{desc ? desc : project.description}</p>
+        {/if}
 
-        <div class="mt-5 xl:mt-0">
-            <h2>{title}</h2>
-            <time class="text-sm text-medium-grey">{date}</time>
+        {#if project || tech}
+            <p class="mb-6 text-sm text-neutral-500 dark:text-neutral-400">{tech ? tech : project.tech}</p>
+        {/if}
+    </div>
+
+    <!-- Thumbnail -->
+    <div class="w-full laptop:w-[60%] mb-6 laptop:mb-0 laptop:ml-auto laptop:pl-6">
+        <div class="relative overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat {project && project.thumbnail.border === 'shadow' ? 'shadow-lg':''}">
+
+            {#if $$slots.images}
+                <slot name="images"/>
+            {:else if project.thumbnail}
+                {#if project.thumbnail.border === "mobile"}
+                    <div class="w-fit laptop:mx-auto">
+                        <MockupPhone>
+                            <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+                        </MockupPhone>
+                    </div>
+                {:else}
+                    <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+                {/if}
+            {/if}
+
+            {#if project && project.slug}
+                <a href="{base}/projects/{project.slug}"
+                   class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
+                </a>
+            {/if}
         </div>
-
-        {#if desc}
-            <p class="text-lg">{desc}</p>
-        {/if}
-
-        {#if tech}
-            <p class="text-sm font-light text-medium-grey">{tech}</p>
-        {/if}
-
-        <a class="font-medium underline mt-auto" href="/" style="padding-bottom: 0;">see more</a>
     </div>
 
-    <div class="flex justify-center items-center">
-        <!-- Put project image(s) into slot-->
-        <slot/>
-    </div>
 
 </article>

@@ -1,0 +1,110 @@
+{
+  "finished": {
+    "crestfallen_opengl": {
+      "title": "Crestfallen OpenGL",
+      "date": "03.2020 – 06.2020",
+      "description": "3D-Platformer built with OpenGL in C++ to showcase graphical effects. Implemented dynamic shadows with StencilShadow-Volumes.",
+      "tech": "C++, OpenGL, Nvidia PhysX, Blender",
+      "colleagues": "Michael Steinkellner",
+      "images": [
+        {
+          "src": "/projects/crestfallen/crestfallen-1.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen/shadow-1-720p.gif",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen/shadow-2-720p.gif",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen/crestfallen-2.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen/crestfallen-3.png",
+          "alt": ""
+        }
+      ],
+      "thumbnail": {
+        "src": "/projects/crestfallen/crestfallen-1.png",
+        "alt": "",
+        "border": "shadow"
+      },
+      "slug": "crestfallen-opengl"
+    },
+    "cinemacurve": {
+      "title": "Cinemacurve",
+      "date": "04.2020 – 06.2020",
+      "description": "A cinema ticket distribution site as well as several admin tools.",
+      "tech": "Java, Typescript, Angular, Spring, JUnit, H2",
+      "colleagues": "Florian Drucker, Patrick Grassl, Felix Kaubek, Peter Nyikos, Michael Winkler",
+      "images": [
+        {
+          "src": "/projects/cinemacurve/home.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/cinemacurve/movie-list.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/cinemacurve/movie-edit.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/cinemacurve/newsletter.png",
+          "alt": ""
+        }
+      ],
+      "thumbnail": {
+        "src": "/projects/cinemacurve/home.png",
+        "alt": "",
+        "border": "shadow"
+      },
+      "slug": "cinemacurve"
+    },
+    "crestfallen_mobile": {
+      "title": "Crestfallen Mobile",
+      "date": "03.2021 – 06.2021",
+      "description": "2D-Platformer written in Android-Studio/ Java, utilising Android Jetpack and SQLite.\n Implemented custom collision handling, scene structure and management of gameobjects.",
+      "tech": "Android Studio, Java, SQLite",
+      "colleagues": "Michael Steinkellner",
+      "images": [
+        {
+          "src": "/projects/crestfallen-mobile-thumb.gif",
+          "alt": ""
+        }
+      ],
+      "thumbnail": {
+        "src": "/projects/crestfallen-mobile-thumb.gif",
+        "alt": "",
+        "border": "mobile"
+      },
+      "slug": "crestfallen-mobile"
+    }
+  },
+  "current": {
+    "crestfallen_versus": {
+      "title": "Crestfallen Versus",
+      "date": "WIP",
+      "description": "Made multiplayer matches over local network",
+      "tech": "Unity, C#",
+      "images": [
+        {
+          "src": "/projects/crestfallen-logo.png",
+          "alt": ""
+        }
+      ],
+      "thumbnail": {
+        "src": "/projects/crestfallen-logo.png",
+        "alt": "Project thumbnail for crestfallen-opengl Versus."
+      },
+      "slug": "crestfallen-versus"
+    }
+  }
+}
+
+

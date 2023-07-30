@@ -1,22 +1,23 @@
-# create-svelte
+# Portfolio - Jakob Hoffmann
+Project data is loaded from a local [JSON file](src/projects.json).
+All project figures/images are put into the [static folder](static/projects).
+The main font and other global css styling is defined in [app.css](src/app.css).
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+#### Projects JSON
 
-## Creating a project
+Notable Fields:
 
-If you're seeing this, you've probably already done this step. Congrats!
+border: [mobile | shadow] \
+Optional. Displays thumbnail border as mockup phone (mobile),\
+fullscreen image with shadow (shadow)\
+or only fullscreen thumbnail (none).
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+slug: string\
+URL parameter (see definition [Slug](https://developer.mozilla.org/en-US/docs/Glossary/Slug)).
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once installed dependencies with `npm install`, start a development server:
 
 ```bash
 npm run dev
@@ -35,4 +36,5 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Deploying
+TODO: Github Pages deployment info here.
