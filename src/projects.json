@@ -1,10 +1,15 @@
 {
   "finished": {
     "crestfallen_opengl": {
-      "title": "Crestfallen OpenGL",
+      "title": "Crestfallen",
       "date": "03.2020 – 06.2020",
       "description": "3D-Platformer built with OpenGL in C++ to showcase graphical effects. Implemented dynamic shadows with StencilShadow-Volumes.",
-      "tech": "C++, OpenGL, Nvidia PhysX, Blender",
+      "tech": [
+        "C++",
+        "OpenGL",
+        "Nvidia PhysX",
+        "Blender"
+      ],
       "colleagues": "Michael Steinkellner",
       "images": [
         {
@@ -39,7 +44,14 @@
       "title": "Cinemacurve",
       "date": "04.2020 – 06.2020",
       "description": "A cinema ticket distribution site as well as several admin tools.",
-      "tech": "Java, Typescript, Angular, Spring, JUnit, H2",
+      "tech": [
+        "Angular",
+        "TypeScript",
+        "Java",
+        "Spring",
+        "JUnit",
+        "H2 SQL Database"
+      ],
       "colleagues": "Florian Drucker, Patrick Grassl, Felix Kaubek, Peter Nyikos, Michael Winkler",
       "images": [
         {
@@ -70,7 +82,12 @@
       "title": "Crestfallen Mobile",
       "date": "03.2021 – 06.2021",
       "description": "2D-Platformer written in Android-Studio/ Java, utilising Android Jetpack and SQLite.\n Implemented custom collision handling, scene structure and management of gameobjects.",
-      "tech": "Android Studio, Java, SQLite",
+      "tech": [
+        "Android Studio",
+        "Android Jetpack",
+        "Java",
+        "SQLite"
+      ],
       "colleagues": "Michael Steinkellner",
       "images": [
         {
@@ -84,6 +101,15 @@
         "border": "mobile"
       },
       "slug": "crestfallen-mobile"
+    },
+    "portfolio": {
+      "title": "This Portfolio",
+      "date": "2023",
+      "tech": [
+        "SvelteKit",
+        "Tailwind CSS",
+        "Webstorm"
+      ]
     }
   },
   "current": {
@@ -91,7 +117,10 @@
       "title": "Crestfallen Versus",
       "date": "WIP",
       "description": "Made multiplayer matches over local network",
-      "tech": "Unity, C#",
+      "tech": [
+        "Unity",
+        "C#"
+      ],
       "images": [
         {
           "src": "/projects/crestfallen-logo.png",
@@ -104,6 +133,26 @@
       },
       "slug": "crestfallen-versus"
     }
+  },
+  "tech": {
+    "C++": "ISO_C++_Logo.svg",
+    "OpenGL": "Opengl-logo.svg",
+    "Nvidia PhysX": "NVIDIA_PhysX_Logo.png",
+    "Blender": "Blender_logo_no_text.svg",
+    "Java": "Java_cup.svg",
+    "TypeScript": "Typescript_logo_2020.svg",
+    "Angular": "angular.svg",
+    "Bootstrap": "bootstrap-4.svg",
+    "Spring": "spring-3.svg",
+    "H2 SQL Database": "h2-logo.svg",
+    "Android Studio": "android-studio-canary.svg",
+    "Android Jetpack": "",
+    "SQLite": "sqlite-1.svg",
+    "SvelteKit": "svelte-seeklogo.com.svg",
+    "Tailwind CSS": "tailwind-css-seeklogo.com.svg",
+    "Webstorm": "WebStorm_Icon.svg",
+    "Unity": "Unity_Technologies_logo.svg",
+    "C#": "c--4.svg"
   }
 }
 

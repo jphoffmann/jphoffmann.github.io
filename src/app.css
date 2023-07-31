@@ -30,7 +30,7 @@
     }
 
     .logo {
-        @apply pb-2 tablet:mx-auto max-w-[160px] max-h-[40px] tablet:max-w-[320px] laptop:max-h-[80px] min-w-[80px] min-h-[20px]
+        @apply max-h-[52px] w-auto h-auto
     }
 }
 

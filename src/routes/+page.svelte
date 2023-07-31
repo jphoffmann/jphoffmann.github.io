@@ -1,6 +1,9 @@
 <script>
     import ProjectCard from '../components/ProjectCard.svelte';
-    import projects from '/src/projects.json';
+    import projects from '../projects.json';
+    import MediaQuery from 'svelte-media-queries'
+
+    let matches = false;
 </script>
 
 <style>
@@ -20,10 +23,10 @@
 </style>
 
 <main>
-    <section class="pt-40 laptop:pt-72">
+    <section class="pt-[10vh]">
         <div class="main-grid">
-            <h1 class="font-bold text-5xl laptop:text-8xl mb-12 laptop:mb-0 mr-8 min-w-fit">
-                <span class="p-4">Hello, I’m</span>
+            <h1 class="flex flex-col font-bold text-5xl laptop:text-8xl mb-12 laptop:mb-0 mr-8 min-w-fit">
+                <span class="pb-0.5">Hello, I’m</span>
                 <span>Jakob Hoffmann</span>
             </h1>
             <p class="text-2xl laptop:text-4xl text-medium-grey self-end">Software Developer and student at TU Vienna
@@ -36,44 +39,40 @@
     </section>
 
     <section id="Projects" class="divide-y divide-gray-300">
-        <ProjectCard project="{projects.finished.crestfallen_opengl}"
-                     tech="C++, OpenGL"
-        />
+        <ProjectCard project="{projects.finished.crestfallen_opengl}"/>
 
         <ProjectCard project="{projects.finished.cinemacurve}"
                      desc="A cinema ticket distribution site as well as several admin tools."
-                     tech="Java, Typescript, Angular, Spring Boot"
         />
 
         <ProjectCard project="{projects.finished.crestfallen_mobile}"
                      desc="2D-Platformer written in Android-Studio/ Java, utilising Android Jetpack and SQLite."
-                     tech="Java, Android Jetpack"
         />
 
-        <ProjectCard title="This Portfolio"
-                     date="2023"
-                     tech="SvelteKit, Tailwind CSS, Webstorm"
-        >
-            <div slot="images" class="flex flex-col tablet:flex-row">
-                <img class="logo" src="Svelte-kit-horizontal.svg" alt="Svelte-kit logo">
-                <img class="logo pl-4" src="tailwindcss-logotype.svg" alt="Tailwind CSS logo">
-                <img class="logo pl-4" src="WebStorm_Icon.svg" alt="Webstorm logo">
+        <MediaQuery query="(min-width: 640px)" bind:matches/>
+        <ProjectCard project="{projects.finished.portfolio}"
+                     tech="{matches ? [] : projects.finished.portfolio.tech}">
+            <div slot="images" class="hidden tablet:flex justify-center gap-10">
+                <img class="logo" src="icons/Svelte-kit-horizontal.svg" alt="Svelte-kit logo">
+                <img class="logo" src="icons/tailwindcss-logotype.svg" alt="Tailwind CSS logo">
+                <img class="logo" src="icons/WebStorm_Icon.svg" alt="Webstorm logo">
             </div>
         </ProjectCard>
 
     </section>
 
     <section id="About" class="pt-40 tablet:flex">
-        <img src="portrait.jpg" alt="portrait photo"
+        <img src="portrait.jpg" alt="Portrait of myself"
              class="mx-auto tablet:mx-0 tablet:mr-20 laptop:mr-40 w-[250px] h-auto">
 
-        <p class="text-2xl laptop:text-4xl laptop:w-[50%] pt-8">
+        <p class="text-2xl laptop:text-4xl laptop:w-[50%] pt-8
+                  text-justify hyphens-auto tablet:text-left tablet:hyphens-none">
             Currently enrolled at TU Vienna, I am a media informatics student with experience
             in web and game development.
         </p>
     </section>
 
-    <hr class="my-12 h-0.5 border-t-0 bg-black opacity-100 dark:opacity-50"/>
+    <hr class="my-12 h-0.5 border-t-0 bg-black opacity-100"/>
 
     <section id="Contact">
         <h2 class="my-4">Contact</h2>

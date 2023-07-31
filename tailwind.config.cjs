@@ -13,6 +13,7 @@ const config = {
       colors: {
         'white': '#F3F3F3',
         'grey': '#F4F3EE',
+        'grey-highlight': '#d0cfcb',
         'medium-grey': '#606060',
         'dark-grey': '#383646',
         'blue':'#C9DBD7',

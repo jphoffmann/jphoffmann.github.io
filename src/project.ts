@@ -1,21 +1,16 @@
-export class Project {
-    constructor(
-        public title: string,
-        public date: string,
-        public description: string,
-        public tech: string,
-        public colleagues: string,
-        public slug: string,
-        public thumbnail: Thumbnail,
-        public images: Object[]
-    ) {
-    }
+export type Project = {
+    title: string;
+    date: string,
+    description?: string,
+    tech: [],
+    colleagues?: string,
+    slug?: string,
+    thumbnail?: Thumbnail,
+    images?: Object[]
 }
 
-export class Thumbnail {
-    constructor(public src: string,
-                public alt: string,
-                public border: string) {
-    }
-
+export type Thumbnail = {
+    src: string,
+    alt: string,
+    border?: string
 }

@@ -1,7 +1,6 @@
-<script lang="ts"
-        type="text/javascript">
+<script lang="ts">
     import {base} from "$app/paths";
-    import {Project} from "../project.ts";
+    import type {Project} from "../project";
     import MockupPhone from "$components/MockupPhone.svelte";
 
     export let project: Project;
@@ -10,7 +9,7 @@
 <article class="min-w-[300px]">
 
     <!-- Thumbnail -->
-    <div class="relative flex justify-center w-full mb-6 overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat {project.thumbnail.border === 'shadow' ? 'shadow-lg':''}">
+    <div class="relative flex justify-center w-full mb-6 overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat {project.thumbnail?.border === 'shadow' ? 'shadow-lg':''}">
         {#if project.thumbnail}
             {#if project.thumbnail.border === "mobile"}
                 <MockupPhone>
@@ -34,7 +33,7 @@
         <h2 class="text-2xl font-bold">{project.title}</h2>
 
         {#if project.description}
-            <p class="mb-6 text-neutral-500 dark:text-neutral-300">{project.description}</p>
+            <p class="mb-6 text-neutral-500">{project.description}</p>
         {/if}
     </div>
 
