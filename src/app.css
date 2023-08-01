@@ -28,10 +28,6 @@
     section {
         @apply  laptop:my-16
     }
-
-    .logo {
-        @apply max-h-[52px] w-auto h-auto
-    }
 }
 
 @layer components {

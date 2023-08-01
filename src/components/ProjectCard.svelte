@@ -25,9 +25,11 @@
             <p class="mb-6 text-neutral-500">{desc || project?.description}</p>
         {/if}
 
-        <div class="mb-6 text-sm text-neutral-500">
-            <TechStack items="{tech ?? project?.tech}"/>
-        </div>
+        {#if tech || project?.tech}
+            <div class="mb-6 text-sm text-neutral-500">
+                <TechStack items="{tech ?? project?.tech}"/>
+            </div>
+        {/if}
 
     </div>
 
@@ -37,22 +39,21 @@
 
             {#if $$slots.images}
                 <slot name="images"/>
+
             {:else if project?.thumbnail?.border === "mobile"}
-                <div class="w-fit tablet:mx-auto">
-                    <MockupPhone>
-                        <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
-                    </MockupPhone>
-                </div>
+                <MockupPhone href="{project.slug ? base+'/projects/'+project.slug : ''}">
+                    <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+                </MockupPhone>
+
             {:else if project?.thumbnail}
                 <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
-            {/if}
-
-            {#if project && project.slug}
-                <a href="{base}/projects/{project.slug}"
-                   class="absolute top-0 right-0 bottom-0 left-0
+                {#if project?.slug}
+                    <a href="{base}/projects/{project.slug}"
+                       class="absolute top-0 right-0 bottom-0 left-0
                    bg-[hsl(0,0%,98.4%,0.2)] opacity-0 hover:opacity-100
                    transition duration-300 ease-in-out">
-                </a>
+                    </a>
+                {/if}
             {/if}
         </div>
     </div>

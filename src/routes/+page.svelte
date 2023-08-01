@@ -52,10 +52,10 @@
         <MediaQuery query="(min-width: 640px)" bind:matches/>
         <ProjectCard project="{projects.finished.portfolio}"
                      tech="{matches ? [] : projects.finished.portfolio.tech}">
-            <div slot="images" class="hidden tablet:flex justify-center gap-10">
-                <img class="logo" src="icons/Svelte-kit-horizontal.svg" alt="Svelte-kit logo">
-                <img class="logo" src="icons/tailwindcss-logotype.svg" alt="Tailwind CSS logo">
-                <img class="logo" src="icons/WebStorm_Icon.svg" alt="Webstorm logo">
+            <div slot="images" class="hidden tablet:flex justify-around gap-10">
+                <img class="max-h-[52px] min-w-0" src="icons/Svelte-kit-horizontal.svg" alt="Svelte-kit logo">
+                <img class="max-h-[52px] min-w-0" src="icons/tailwindcss-logotype.svg" alt="Tailwind CSS logo">
+                <img class="max-h-[52px] min-w-0" src="icons/WebStorm_Icon.svg" alt="Webstorm logo">
             </div>
         </ProjectCard>
 
