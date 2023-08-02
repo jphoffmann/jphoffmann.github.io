@@ -4,58 +4,43 @@
     import MockupPhone from "$components/MockupPhone.svelte";
     import TechStack from "$components/TechStack.svelte";
 
-    export let project: Project | null = null;
+    export let project: Project;
 
-    //Optional override of project information:
-    export let title: String = "";
-    export let date: String = "";
+    //Optional override of project description:
     export let desc: String = "";
-    export let tech: [] | undefined = undefined;
 </script>
 
 <article class="flex flex-wrap-reverse tablet:flex-nowrap py-10 laptop:py-20">
-
     <!-- Description -->
     <div class="tablet:w-[35%] px-2 tablet:px-0 laptop:pr-6">
-        <h2 class="text-2xl font-bold">{title || project?.title}</h2>
+        <h2 class="text-2xl font-bold">{project.title}</h2>
 
-        <p class="mb-6 text-sm text-neutral-500">{date || project?.date}</p>
+        <p class="mb-6 text-sm text-neutral-500">{project.date}</p>
 
-        {#if desc || project?.description}
-            <p class="mb-6 text-neutral-500">{desc || project?.description}</p>
-        {/if}
+        <p class="mb-6 text-neutral-500">{desc || project.description}</p>
 
-        {#if tech || project?.tech}
-            <div class="mb-6 text-sm text-neutral-500">
-                <TechStack items="{tech ?? project?.tech}"/>
-            </div>
-        {/if}
-
-    </div>
-
-    <!-- Thumbnail -->
-    <div class="w-full tablet:w-[60%] mb-6 laptop:mb-0 tablet:ml-auto laptop:pl-6">
-        <div class="relative overflow-hidden rounded-lg {project?.thumbnail?.border === 'shadow' ? 'shadow-lg':''}">
-
-            {#if $$slots.images}
-                <slot name="images"/>
-
-            {:else if project?.thumbnail?.border === "mobile"}
-                <MockupPhone href="{project.slug ? base+'/projects/'+project.slug : ''}">
-                    <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
-                </MockupPhone>
-
-            {:else if project?.thumbnail}
-                <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
-                {#if project?.slug}
-                    <a href="{base}/projects/{project.slug}"
-                       class="absolute top-0 right-0 bottom-0 left-0
-                   bg-[hsl(0,0%,98.4%,0.2)] opacity-0 hover:opacity-100
-                   transition duration-300 ease-in-out">
-                    </a>
-                {/if}
-            {/if}
+        <div class="mb-6 text-sm text-neutral-500">
+            <TechStack items="{project.tech}"/>
         </div>
     </div>
 
+    <!-- Thumbnail -->
+    <div class="tablet:w-[60%] w-full h-fit mb-6 tablet:mb-0 tablet:ml-auto
+         relative overflow-hidden rounded-lg {project.thumbnail?.border === 'shadow' ? 'shadow-lg':''}">
+        {#if project.thumbnail?.border === "mobile"}
+            <MockupPhone href="{project.slug ? base+'/projects/'+project.slug : ''}">
+                <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+            </MockupPhone>
+        {:else if project.thumbnail}
+            <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+
+            {#if project.slug}
+                <a href="{base}/projects/{project.slug}"
+                   class="absolute top-0 right-0 bottom-0 left-0
+                   bg-[hsl(0,0%,98.4%,0.2)] opacity-0 hover:opacity-100
+                   transition duration-300 ease-in-out">
+                </a>
+            {/if}
+        {/if}
+    </div>
 </article>

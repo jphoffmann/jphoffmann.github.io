@@ -2,10 +2,10 @@ export type Project = {
     title: string;
     date: string,
     description?: string,
-    tech: [],
+    tech: string[],
     colleagues?: string,
     slug?: string,
-    thumbnail?: Thumbnail,
+    thumbnail: Thumbnail,
     images?: Object[]
 }
 

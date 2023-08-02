@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
     import ProjectCard from '../components/ProjectCard.svelte';
     import projects from '../projects.json';
     import MediaQuery from 'svelte-media-queries'
-
-    let matches = false;
+    import TechStack from "$components/TechStack.svelte";
 </script>
 
 <style>
@@ -41,23 +40,25 @@
     <section id="Projects" class="divide-y divide-gray-300">
         <ProjectCard project="{projects.finished.crestfallen_opengl}"/>
 
-        <ProjectCard project="{projects.finished.cinemacurve}"
-                     desc="A cinema ticket distribution site as well as several admin tools."
-        />
+        <ProjectCard project="{projects.finished.cinemacurve}"/>
 
         <ProjectCard project="{projects.finished.crestfallen_mobile}"
-                     desc="2D-Platformer written in Android-Studio/ Java, utilising Android Jetpack and SQLite."
-        />
+                     desc="2D-Platformer inspired by Jump King. Written in Android-Studio/ Java,
+                     utilising Android Jetpack and SQLite."/>
 
-        <MediaQuery query="(min-width: 640px)" bind:matches/>
-        <ProjectCard project="{projects.finished.portfolio}"
-                     tech="{matches ? [] : projects.finished.portfolio.tech}">
-            <div slot="images" class="hidden tablet:flex justify-around gap-10">
-                <img class="max-h-[52px] min-w-0" src="icons/Svelte-kit-horizontal.svg" alt="Svelte-kit logo">
-                <img class="max-h-[52px] min-w-0" src="icons/tailwindcss-logotype.svg" alt="Tailwind CSS logo">
-                <img class="max-h-[52px] min-w-0" src="icons/WebStorm_Icon.svg" alt="Webstorm logo">
+        <article class="flex flex-col tablet:flex-row py-10 laptop:py-20">
+            <div class="tablet:w-[35%] px-2 tablet:px-0 laptop:pr-6">
+                <h2 class="text-2xl font-bold">This Portfolio</h2>
+                <p class="mb-7 tablet:mb-0 text-sm text-neutral-500">2023</p>
             </div>
-        </ProjectCard>
+            <div class="flex justify-around gap-5 tablet:gap-5 tablet:w-[60%] tablet:ml-auto">
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="icons/Svelte-kit-horizontal.svg"
+                     alt="Svelte-kit logo">
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="icons/tailwindcss-logotype.svg"
+                     alt="Tailwind CSS logo">
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="icons/WebStorm_Icon.svg" alt="Webstorm logo">
+            </div>
+        </article>
 
     </section>
 
