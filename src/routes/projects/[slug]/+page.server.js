@@ -1,5 +1,5 @@
 import error from '@sveltejs/kit';
-import projects from '/src/projects.json';
+import projects from '$lib/projects.json';
 
 export function load({params}) {
     for(const val of Object.values(projects.finished).concat(Object.values(projects.current))){

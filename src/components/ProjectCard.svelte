@@ -1,6 +1,6 @@
 <script lang="ts">
     import {base} from "$app/paths";
-    import type {Project} from "../project";
+    import type {Project} from "$lib/project";
     import MockupPhone from "$components/MockupPhone.svelte";
     import TechStack from "$components/TechStack.svelte";
 
@@ -15,11 +15,11 @@
     <div class="tablet:w-[35%] px-2 tablet:px-0 laptop:pr-6">
         <h2 class="text-2xl font-bold">{project.title}</h2>
 
-        <p class="mb-6 text-sm text-neutral-500">{project.date}</p>
+        <p class="mb-4 laptop:mb-6 text-sm text-neutral-500">{project.date}</p>
 
-        <p class="mb-6 text-neutral-500">{desc || project.description}</p>
+        <p class="mb-4 laptop:mb-6 text-neutral-500">{desc || project.description}</p>
 
-        <div class="mb-6 text-sm text-neutral-500">
+        <div class="text-sm text-neutral-500">
             <TechStack items="{project.tech}"/>
         </div>
     </div>

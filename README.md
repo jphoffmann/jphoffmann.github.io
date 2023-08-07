@@ -1,5 +1,5 @@
 # Portfolio - Jakob Hoffmann
-Project data is loaded from a local [JSON file](src/projects.json).
+Project data is loaded from a local [JSON file](src/lib/projects.json).
 All project figures/images are put into the [static folder](static/projects).
 The main font and other global css styling is defined in [app.css](src/app.css).
 

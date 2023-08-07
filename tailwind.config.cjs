@@ -13,17 +13,19 @@ const config = {
       colors: {
         'white': '#F3F3F3',
         'grey': '#F4F3EE',
+        'grey-alt': '#ebede9',
         'grey-highlight': '#d0cfcb',
         'medium-grey': '#606060',
         'dark-grey': '#383646',
         'blue':'#C9DBD7',
         'medium-blue':'#89b7ae',
+        'dark-blue':'#10141f',
         'black': '#181717',
       },
     },
   },
 
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require("tw-elements/dist/plugin")],
   darkMode: "class"
 };
 

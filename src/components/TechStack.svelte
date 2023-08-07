@@ -1,5 +1,5 @@
-<script lang="ts">
-    import projects from '../projects.json';
+<script lang="ts" src="./TW-ELEMENTS-PATH/dist/js/tw-elements.umd.min.js">
+    import projects from '$lib/projects.json';
 
     let tech = new Map<string, string>(Object.entries(projects.tech));
 
@@ -25,7 +25,7 @@
 
                 <!--Logo-->
                 <img src="/icons/{tech.get(item)}" alt="{item} Logo"
-                     class="min-w-[40px] min-h-[40px] max-w-[100px] max-h-[40px] h-auto"/>
+                     class="min-w-[40px] max-w-[100px] h-[30px] laptop:h-[40px]"/>
             </div>
         {/if}
     {/each}

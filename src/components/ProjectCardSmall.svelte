@@ -1,6 +1,6 @@
 <script lang="ts">
     import {base} from "$app/paths";
-    import type {Project} from "../project";
+    import type {Project} from "$lib/project";
     import MockupPhone from "$components/MockupPhone.svelte";
 
     export let project: Project;

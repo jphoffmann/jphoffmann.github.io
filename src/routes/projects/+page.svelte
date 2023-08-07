@@ -1,7 +1,7 @@
 <script>
     import ProjectCard from "$components/ProjectCard.svelte";
     import ProjectCardSmall from "$components/ProjectCardSmall.svelte";
-    import projects from '../../projects.json';
+    import projects from '$lib/projects.json';
 </script>
 
 <section>

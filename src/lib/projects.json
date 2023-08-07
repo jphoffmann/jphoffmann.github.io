@@ -17,14 +17,6 @@
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen/shadow-1-720p.gif",
-          "alt": ""
-        },
-        {
-          "src": "/projects/crestfallen/shadow-2-720p.gif",
-          "alt": ""
-        },
-        {
           "src": "/projects/crestfallen/crestfallen-2.png",
           "alt": ""
         },
@@ -33,12 +25,24 @@
           "alt": ""
         }
       ],
+      "gif": [
+        {
+          "src": "/projects/crestfallen/shadow-1-720p.gif",
+          "alt": "",
+          "thumb": "/projects/crestfallen/crestfallen-1.png"
+        },
+        {
+          "src": "/projects/crestfallen/shadow-2-720p.gif",
+          "alt": "",
+          "thumb": "/projects/crestfallen/crestfallen-1.png"
+        }
+      ],
       "thumbnail": {
         "src": "/projects/crestfallen/crestfallen-1.png",
         "alt": "",
         "border": "shadow"
       },
-      "slug": "crestfallen-opengl"
+      "slug": "test"
     },
     "cinemacurve": {
       "title": "Cinemacurve",
@@ -101,15 +105,6 @@
         "border": "mobile"
       },
       "slug": "crestfallen-mobile"
-    },
-    "portfolio": {
-      "title": "This Portfolio",
-      "date": "2023",
-      "tech": [
-        "SvelteKit",
-        "Tailwind CSS",
-        "Webstorm"
-      ]
     }
   },
   "current": {

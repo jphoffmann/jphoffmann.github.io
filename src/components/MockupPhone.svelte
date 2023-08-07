@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let href: string;
+    export let href: string  = "";
 </script>
 <div class="relative w-fit mx-auto px-[3px] tablet:h-full">
     <div class="relative border-gray-800 border-[14px] rounded-[2rem] w-[280px] h-[478px]  drop-shadow-md">
