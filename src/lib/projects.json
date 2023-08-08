@@ -53,6 +53,7 @@
         "TypeScript",
         "Java",
         "Spring",
+        "Maven",
         "JUnit",
         "H2 SQL Database"
       ],
@@ -90,6 +91,7 @@
         "Android Studio",
         "Android Jetpack",
         "Java",
+        "Gradle",
         "SQLite"
       ],
       "colleagues": "Michael Steinkellner",
@@ -146,7 +148,9 @@
     "Tailwind CSS": "tailwind-css-seeklogo.com.svg",
     "Webstorm": "WebStorm_Icon.svg",
     "Unity": "Unity_Technologies_logo.svg",
-    "C#": "c--4.svg"
+    "C#": "c--4.svg",
+    "Maven": "maven_icon.svg",
+    "Gradle": "gradle-icon.svg"
   }
 }
 
