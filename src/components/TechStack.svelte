@@ -20,7 +20,7 @@
      */
 </script>
 
-<div class="flex flex-wrap gap-2.5">
+<div class="flex flex-wrap laptop:gap-2.5">
     {#each items as item}
         {#if tech.has(item)}
             <div class="inline-block relative rounded-[0.5rem] p-1

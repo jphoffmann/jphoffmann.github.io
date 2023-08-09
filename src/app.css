@@ -19,10 +19,6 @@
         @apply text-lg font-medium uppercase
     }
 
-    section {
-
-    }
-
     @font-face {
         font-family: 'DM Sans';
         src: local('DMSans'), url('/fonts/DMSans/DMSans-Regular.ttf');

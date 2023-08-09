@@ -33,6 +33,7 @@
         <ProjectCard project="{projects.finished.cinemacurve}"/>
 
         <ProjectCard project="{projects.finished.crestfallen_mobile}"
+                     thumbnail="/projects/crestfallen-mobile/crestfallen-mobile-damage.gif"
                      desc="2D-Platformer inspired by Jump King. Written in Android-Studio/ Java,
                      utilising Android Jetpack and SQLite."/>
 

@@ -17,6 +17,16 @@
           "alt": ""
         },
         {
+          "src": "/projects/crestfallen/shadow-1-720p.gif",
+          "alt": "",
+          "thumb": "/projects/crestfallen/shadow-1-thumb.png"
+        },
+        {
+          "src": "/projects/crestfallen/shadow-2-720p.gif",
+          "alt": "",
+          "thumb": "/projects/crestfallen/shadow-2-thumb.png"
+        },
+        {
           "src": "/projects/crestfallen/crestfallen-2.png",
           "alt": ""
         },
@@ -29,12 +39,12 @@
         {
           "src": "/projects/crestfallen/shadow-1-720p.gif",
           "alt": "",
-          "thumb": "/projects/crestfallen/crestfallen-1.png"
+          "thumb": "/projects/crestfallen/shadow-1-thumb.png"
         },
         {
           "src": "/projects/crestfallen/shadow-2-720p.gif",
           "alt": "",
-          "thumb": "/projects/crestfallen/crestfallen-1.png"
+          "thumb": "/projects/crestfallen/shadow-2-thumb.png"
         }
       ],
       "thumbnail": {
@@ -42,7 +52,7 @@
         "alt": "",
         "border": "shadow"
       },
-      "slug": "test"
+      "slug": "crestfallen-opengl"
     },
     "cinemacurve": {
       "title": "Cinemacurve",
@@ -97,12 +107,51 @@
       "colleagues": "Michael Steinkellner",
       "images": [
         {
-          "src": "/projects/crestfallen-mobile-thumb.gif",
+          "src": "/projects/crestfallen-mobile/Screenshot_8.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_2.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_1.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_9.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_3.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_4.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_5.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_6.png",
+          "alt": ""
+        },
+        {
+          "src": "/projects/crestfallen-mobile/Screenshot_7.png",
           "alt": ""
         }
       ],
+      "gif": [
+        {
+          "src": "/projects/crestfallen-mobile/crestfallen-mobile-damage.gif",
+          "alt": "",
+          "thumb": "/projects/crestfallen-mobile/crestfallen-mobile-damage-thumb.png"
+        }
+      ],
       "thumbnail": {
-        "src": "/projects/crestfallen-mobile-thumb.gif",
+        "src": "/projects/crestfallen-mobile/Screenshot_1.png",
         "alt": "",
         "border": "mobile"
       },
@@ -127,8 +176,7 @@
       "thumbnail": {
         "src": "/projects/crestfallen-logo.png",
         "alt": "Project thumbnail for crestfallen-opengl Versus."
-      },
-      "slug": "crestfallen-versus"
+      }
     }
   },
   "tech": {

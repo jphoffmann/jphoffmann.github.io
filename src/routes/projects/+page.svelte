@@ -15,7 +15,7 @@
 </section>
 
 <section>
-    <h2 class="my-16 text-center">Current Projects</h2>
+    <h2 class="mt-24 mb-6 text-center">Current Projects</h2>
 
     <ProjectCard project="{projects.current.crestfallen_versus}"/>
 </section>

@@ -8,6 +8,7 @@
 
     //Optional override of project description:
     export let desc: String = "";
+    export let thumbnail = '';
 </script>
 
 <article class="flex flex-wrap-reverse tablet:flex-nowrap py-10 laptop:py-20">
@@ -29,10 +30,10 @@
          relative overflow-hidden rounded-lg {project.thumbnail?.border === 'shadow' ? 'shadow-lg':''}">
         {#if project.thumbnail?.border === "mobile"}
             <MockupPhone href="{project.slug ? base+'/projects/'+project.slug : ''}">
-                <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+                <img src="{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
             </MockupPhone>
-        {:else if project.thumbnail}
-            <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+        {:else if thumbnail || project.thumbnail}
+            <img src="{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
 
             {#if project.slug}
                 <a href="{base}/projects/{project.slug}"
