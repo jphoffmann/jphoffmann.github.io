@@ -1,34 +1,44 @@
-<script>
+<script lang="ts">
     import GIF from '$components/GIF.svelte'
     import {Carousel} from 'flowbite-svelte'
+    import {base} from "$app/paths";
 
     export let data;
-
-    $: images = data.images.map((image, index) => image = {
-        "id": index,
-        "imgurl": image.src,
-        "name": image.alt
-    })
+    let images: Object[];
+    $: {
+        images = [];
+        data.images.forEach((image, index) => images.push(
+            {
+                "id": index,
+                "imgurl": base+'/'+image.src,
+                "name": image.alt
+            }
+        ));
+    }
 </script>
 
 
 <h2 class="mt-16 mb-5 font-bold text-xl">{data.title}</h2>
 
-<div class="flex flex-wrap tablet:flex-nowrap mb-10">
+<div class="flex flex-wrap justify-between mb-10 h-full">
     {#if data.images}
-        <div class="dark tablet:max-w-[70%] pb-5 mr-28 p-1">
+        <div class="dark pb-5 mx-auto tablet:mx-0 laptop:max-w-[65%]">
             <Carousel
                     {images}
                     showCaptions={false}
                     showIndicators={false}
-                    divClass="max-h-[650px]  pb-2 px-1 rounded-md overflow-hidden"
-                    slideClass="h-[650px] mx-auto"
-                    thumbClass="max-h-[281px] rounded-md opacity-60 hover:scale-[1.02] transition duration-300 ease-in-out border-2"
+                    showThumbs={true}
+                    imgFit="fill"
+                    imgClass="h-full w-auto max-h-[650px]"
+                    divClass=""
+                    thumbClass="max-h-[281px]"
+                    thumbDivClass="flex flex-row justify-between w-full pt-2 gap-2"
+
             />
         </div>
     {/if}
 
-    <div class="tablet:max-w-[25%]">
+    <div class="laptop:max-w-[30%]">
         <div class="pb-5">
             <p>{data.description}</p>
             <slot name="description"/>

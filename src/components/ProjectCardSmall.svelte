@@ -13,10 +13,10 @@
         {#if project.thumbnail}
             {#if project.thumbnail.border === "mobile"}
                 <MockupPhone>
-                    <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+                    <img src="{base}/{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
                 </MockupPhone>
             {:else}
-                <img src="{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+                <img src="{base}/{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
             {/if}
         {/if}
 

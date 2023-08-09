@@ -37,4 +37,9 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 ## Deploying
-TODO: Github Pages deployment info here.
+
+To deploy the build to the gh-pages branch:
+
+```bash
+npm run deploy
+```

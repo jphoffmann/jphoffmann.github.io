@@ -13,42 +13,42 @@
       "colleagues": "Michael Steinkellner",
       "images": [
         {
-          "src": "/projects/crestfallen/crestfallen-1.png",
+          "src": "projects/crestfallen/crestfallen-1.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen/shadow-1-720p.gif",
+          "src": "projects/crestfallen/shadow-1-720p.gif",
           "alt": "",
-          "thumb": "/projects/crestfallen/shadow-1-thumb.png"
+          "thumb": "projects/crestfallen/shadow-1-thumb.png"
         },
         {
-          "src": "/projects/crestfallen/shadow-2-720p.gif",
+          "src": "projects/crestfallen/shadow-2-720p.gif",
           "alt": "",
-          "thumb": "/projects/crestfallen/shadow-2-thumb.png"
+          "thumb": "projects/crestfallen/shadow-2-thumb.png"
         },
         {
-          "src": "/projects/crestfallen/crestfallen-2.png",
+          "src": "projects/crestfallen/crestfallen-2.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen/crestfallen-3.png",
+          "src": "projects/crestfallen/crestfallen-3.png",
           "alt": ""
         }
       ],
       "gif": [
         {
-          "src": "/projects/crestfallen/shadow-1-720p.gif",
+          "src": "projects/crestfallen/shadow-1-720p.gif",
           "alt": "",
-          "thumb": "/projects/crestfallen/shadow-1-thumb.png"
+          "thumb": "projects/crestfallen/shadow-1-thumb.png"
         },
         {
-          "src": "/projects/crestfallen/shadow-2-720p.gif",
+          "src": "projects/crestfallen/shadow-2-720p.gif",
           "alt": "",
-          "thumb": "/projects/crestfallen/shadow-2-thumb.png"
+          "thumb": "projects/crestfallen/shadow-2-thumb.png"
         }
       ],
       "thumbnail": {
-        "src": "/projects/crestfallen/crestfallen-1.png",
+        "src": "projects/crestfallen/crestfallen-1.png",
         "alt": "",
         "border": "shadow"
       },
@@ -70,24 +70,24 @@
       "colleagues": "Florian Drucker, Patrick Grassl, Felix Kaubek, Peter Nyikos, Michael Winkler",
       "images": [
         {
-          "src": "/projects/cinemacurve/home.png",
+          "src": "projects/cinemacurve/home.png",
           "alt": ""
         },
         {
-          "src": "/projects/cinemacurve/movie-list.png",
+          "src": "projects/cinemacurve/movie-list.png",
           "alt": ""
         },
         {
-          "src": "/projects/cinemacurve/movie-edit.png",
+          "src": "projects/cinemacurve/movie-edit.png",
           "alt": ""
         },
         {
-          "src": "/projects/cinemacurve/newsletter.png",
+          "src": "projects/cinemacurve/newsletter.png",
           "alt": ""
         }
       ],
       "thumbnail": {
-        "src": "/projects/cinemacurve/home.png",
+        "src": "projects/cinemacurve/home.png",
         "alt": "",
         "border": "shadow"
       },
@@ -107,51 +107,51 @@
       "colleagues": "Michael Steinkellner",
       "images": [
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_8.png",
+          "src": "projects/crestfallen-mobile/Screenshot_8.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_2.png",
+          "src": "projects/crestfallen-mobile/Screenshot_2.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_1.png",
+          "src": "projects/crestfallen-mobile/Screenshot_1.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_9.png",
+          "src": "projects/crestfallen-mobile/Screenshot_9.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_3.png",
+          "src": "projects/crestfallen-mobile/Screenshot_3.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_4.png",
+          "src": "projects/crestfallen-mobile/Screenshot_4.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_5.png",
+          "src": "projects/crestfallen-mobile/Screenshot_5.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_6.png",
+          "src": "projects/crestfallen-mobile/Screenshot_6.png",
           "alt": ""
         },
         {
-          "src": "/projects/crestfallen-mobile/Screenshot_7.png",
+          "src": "projects/crestfallen-mobile/Screenshot_7.png",
           "alt": ""
         }
       ],
       "gif": [
         {
-          "src": "/projects/crestfallen-mobile/crestfallen-mobile-damage.gif",
+          "src": "projects/crestfallen-mobile/crestfallen-mobile-damage.gif",
           "alt": "",
-          "thumb": "/projects/crestfallen-mobile/crestfallen-mobile-damage-thumb.png"
+          "thumb": "projects/crestfallen-mobile/crestfallen-mobile-damage-thumb.png"
         }
       ],
       "thumbnail": {
-        "src": "/projects/crestfallen-mobile/Screenshot_1.png",
+        "src": "projects/crestfallen-mobile/Screenshot_1.png",
         "alt": "",
         "border": "mobile"
       },
@@ -169,12 +169,12 @@
       ],
       "images": [
         {
-          "src": "/projects/crestfallen-logo.png",
+          "src": "projects/crestfallen-logo.png",
           "alt": ""
         }
       ],
       "thumbnail": {
-        "src": "/projects/crestfallen-logo.png",
+        "src": "projects/crestfallen-logo.png",
         "alt": "Project thumbnail for crestfallen-opengl Versus."
       }
     }

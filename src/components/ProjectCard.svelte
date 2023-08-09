@@ -30,10 +30,10 @@
          relative overflow-hidden rounded-lg {project.thumbnail?.border === 'shadow' ? 'shadow-lg':''}">
         {#if project.thumbnail?.border === "mobile"}
             <MockupPhone href="{project.slug ? base+'/projects/'+project.slug : ''}">
-                <img src="{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+                <img src="{base}/{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
             </MockupPhone>
         {:else if thumbnail || project.thumbnail}
-            <img src="{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+            <img src="{base}/{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
 
             {#if project.slug}
                 <a href="{base}/projects/{project.slug}"

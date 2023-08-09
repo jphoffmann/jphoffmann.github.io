@@ -1,4 +1,4 @@
-import error from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import projects from '$lib/projects.json';
 
 export function load({params}) {

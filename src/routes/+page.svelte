@@ -2,6 +2,7 @@
     import ProjectCard from '$components/ProjectCard.svelte';
     import projects from '$lib/projects.json';
     import {SmoothScroll} from "$lib/SmoothScroll";
+    import {base} from "$app/paths";
 
     const smoothScroll = new SmoothScroll(500);
 </script>
@@ -18,10 +19,10 @@
             at TU Vienna
             who likes interesting challenges.</p>
 
-        <a href="#Projects" on:click|preventDefault={() => smoothScroll.scrollTo('Projects')}>
+        <a href="#Projects" on:click|preventDefault={() => smoothScroll.scrollTo('Projects')} class="w-fit">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                  stroke="currentColor"
-                 class="w-10 h-10 mt-10">
+                 class="w-10 h-10 mt-10 inline">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"/>
             </svg>
         </a>
@@ -33,7 +34,7 @@
         <ProjectCard project="{projects.finished.cinemacurve}"/>
 
         <ProjectCard project="{projects.finished.crestfallen_mobile}"
-                     thumbnail="/projects/crestfallen-mobile/crestfallen-mobile-damage.gif"
+                     thumbnail="projects/crestfallen-mobile/crestfallen-mobile-damage.gif"
                      desc="2D-Platformer inspired by Jump King. Written in Android-Studio/ Java,
                      utilising Android Jetpack and SQLite."/>
 
@@ -56,7 +57,7 @@
     <section id="About" class="pt-40">
         <h2 class="my-4">About</h2>
         <div class="tablet:flex">
-            <img src="portrait.jpg" alt="Portrait of myself"
+            <img src="{base}/portrait.jpg" alt="Portrait of myself"
                  class="mx-auto tablet:mx-0 tablet:mr-20 laptop:mr-40 w-[150px] tablet:w-[250px] h-auto">
 
             <p class="tablet:text-2xl laptop:text-3xl laptop:w-[50%] pt-8
@@ -85,7 +86,7 @@
                 <a class="tablet:text-xl mb-6"
                    href="mailto:jp.hoffmann96@gmail.com">jp.hoffmann96@gmail.com</a>
                 <button class="btn btn-blue max-w-fit px-7 mx-auto laptop:mx-0">
-                    <a class="tablet:text-xl" href="Hoffmann_CV.pdf" target="_blank">View Resume</a>
+                    <a class="tablet:text-xl" href="{base}/Hoffmann_CV.pdf" target="_blank">View Resume</a>
                 </button>
             </div>
         </div>

@@ -11,6 +11,7 @@ const config = {
     }),
     paths: {
       base: '/jphoffmann.github.io',
+      relative: false
     },
     alias: {
       $components: 'src/components',

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import {base} from "$app/paths";
     import {Tooltip} from 'flowbite-svelte';
     import projects from '$lib/projects.json';
 
@@ -25,7 +26,7 @@
         {#if tech.has(item)}
             <div class="inline-block relative rounded-[0.5rem] p-1
             hover:bg-[hsl(0,0%,90%,1)] transition duration-300 ease-in-out">
-                <img src="/icons/{tech.get(item)}" alt="{item} Logo"
+                <img src="{base}/icons/{tech.get(item)}" alt="{item} Logo"
                      class="min-w-[40px] max-w-[100px] h-[30px] laptop:h-[40px]"/>
             </div>
 
