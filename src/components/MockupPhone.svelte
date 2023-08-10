@@ -3,7 +3,7 @@
 </script>
 
 <div class="relative w-fit px-[3px] mx-auto">
-    <div class="relative border-gray-800 border-[11px] tablet:border-[14px] rounded-[21px] tablet:rounded-[2rem] drop-shadow-md">
+    <div class="relative border-gray-800 border-[11px] tablet:border-[14px] rounded-[21px] tablet:rounded-[2rem] drop-shadow-md bg-gray-800">
         <div class="absolute w-[3px] h-[26px] tablet:h-[32px] bg-gray-800 -left-[13.6px]  tablet:-left-[17px] top-[57.6px]  tablet:top-[72px] rounded-l-lg"></div>
         <div class="absolute w-[3px] h-[37px] tablet:h-[46px] bg-gray-800 -left-[13.6px]  tablet:-left-[17px] top-[99.2px] tablet:top-[124px] rounded-l-lg"></div>
         <div class="absolute w-[3px] h-[37px] tablet:h-[46px] bg-gray-800 -left-[13.6px]  tablet:-left-[17px] top-[142.4px] tablet:top-[178px] rounded-l-lg"></div>

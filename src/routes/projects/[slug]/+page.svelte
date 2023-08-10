@@ -1,5 +1,4 @@
 <script lang="ts">
-    import GIF from '$components/GIF.svelte'
     import {Carousel} from 'flowbite-svelte'
     import {base} from "$app/paths";
 

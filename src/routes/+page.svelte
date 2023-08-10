@@ -44,11 +44,11 @@
                 <p class="mb-7 tablet:mb-0 text-sm text-neutral-500">2023</p>
             </div>
             <div class="flex justify-around gap-5 tablet:gap-5 tablet:w-[60%] tablet:ml-auto">
-                <img class="max-w-[310px] max-h-[50px] min-w-0" src="icons/Svelte-kit-horizontal.svg"
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/Svelte-kit-horizontal.svg"
                      alt="Svelte-kit logo">
-                <img class="max-w-[310px] max-h-[50px] min-w-0" src="icons/tailwindcss-logotype.svg"
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/tailwindcss-logotype.svg"
                      alt="Tailwind CSS logo">
-                <img class="max-w-[310px] max-h-[50px] min-w-0" src="icons/WebStorm_Icon.svg" alt="Webstorm logo">
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/WebStorm_Icon.svg" alt="Webstorm logo">
             </div>
         </article>
 

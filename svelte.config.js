@@ -1,24 +1,23 @@
-import { vitePreprocess } from "@sveltejs/kit/vite";
+import {vitePreprocess} from "@sveltejs/kit/vite";
 import adapter from "@sveltejs/adapter-static";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter({
-      pages: 'build',
-      assets: 'build',
-      fallback: null
-    }),
-    paths: {
-      base: '/jphoffmann.github.io',
-      relative: false
+    kit: {
+        adapter: adapter({
+            pages: 'build',
+            assets: 'build',
+            fallback: null
+        }),
+        paths: {
+            base: "",
+        },
+        alias: {
+            $components: 'src/components',
+        },
     },
-    alias: {
-      $components: 'src/components',
-    },
-  },
 
-  preprocess: [vitePreprocess({})],
+    preprocess: [vitePreprocess({})],
 };
 
 export default config;
