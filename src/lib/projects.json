@@ -13,25 +13,15 @@
       "colleagues": "Michael Steinkellner",
       "images": [
         {
-          "src": "projects/crestfallen/crestfallen-1.png",
+          "src": "projects/crestfallen/crestfallen-1.jpg",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen/shadow-1-720p.gif",
-          "alt": "",
-          "thumb": "projects/crestfallen/shadow-1-thumb.png"
-        },
-        {
-          "src": "projects/crestfallen/shadow-2-720p.gif",
-          "alt": "",
-          "thumb": "projects/crestfallen/shadow-2-thumb.png"
-        },
-        {
-          "src": "projects/crestfallen/crestfallen-2.png",
+          "src": "projects/crestfallen/crestfallen-2.jpg",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen/crestfallen-3.png",
+          "src": "projects/crestfallen/crestfallen-3.jpg",
           "alt": ""
         }
       ],
@@ -49,10 +39,10 @@
       ],
       "thumbnail": {
         "src": "projects/crestfallen/crestfallen-1.png",
-        "alt": "",
-        "border": "shadow"
+        "alt": ""
       },
-      "slug": "crestfallen-opengl"
+      "slug": "crestfallen-opengl",
+      "border": "shadow"
     },
     "cinemacurve": {
       "title": "Cinemacurve",
@@ -88,10 +78,10 @@
       ],
       "thumbnail": {
         "src": "projects/cinemacurve/home.png",
-        "alt": "",
-        "border": "shadow"
+        "alt": ""
       },
-      "slug": "cinemacurve"
+      "slug": "cinemacurve",
+      "border": "shadow"
     },
     "crestfallen_mobile": {
       "title": "Crestfallen Mobile",
@@ -152,10 +142,10 @@
       ],
       "thumbnail": {
         "src": "projects/crestfallen-mobile/Screenshot_1.png",
-        "alt": "",
-        "border": "mobile"
+        "alt": ""
       },
-      "slug": "crestfallen-mobile"
+      "slug": "crestfallen-mobile",
+      "border": "mobile"
     }
   },
   "current": {

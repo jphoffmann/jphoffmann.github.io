@@ -5,24 +5,14 @@ export type Project = {
     tech: string[],
     colleagues?: string,
     slug?: string,
-    thumbnail: Thumbnail,
+    thumbnail: Image,
     images?: Image[],
-    gif?: GIF[]
-}
-
-export type Thumbnail = {
-    src: string,
-    alt: string,
+    gifs?: Image[],
     border?: string
 }
 
 export type Image = {
     src: string,
     alt: string
-}
-
-export type GIF = {
-    src: string,
-    alt: string,
-    thumb: string
+    thumb?: string
 }

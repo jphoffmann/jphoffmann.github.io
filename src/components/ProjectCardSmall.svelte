@@ -9,9 +9,9 @@
 <article class="min-w-[300px]">
 
     <!-- Thumbnail -->
-    <div class="relative flex justify-center w-full mb-6 overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat {project.thumbnail?.border === 'shadow' ? 'shadow-lg':''}">
+    <div class="relative flex justify-center w-full mb-6 overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat {project.border === 'shadow' ? 'shadow-lg':''}">
         {#if project.thumbnail}
-            {#if project.thumbnail.border === "mobile"}
+            {#if project.border === "mobile"}
                 <MockupPhone>
                     <img src="{base}/{project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
                 </MockupPhone>

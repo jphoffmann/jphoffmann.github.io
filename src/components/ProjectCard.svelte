@@ -27,8 +27,8 @@
 
     <!-- Thumbnail -->
     <div class="tablet:w-[60%] w-full h-fit mb-6 tablet:mb-0 tablet:ml-auto
-         relative overflow-hidden rounded-lg {project.thumbnail?.border === 'shadow' ? 'shadow-lg':''}">
-        {#if project.thumbnail?.border === "mobile"}
+         relative overflow-hidden rounded-lg" class:shadow-lg={project.border === 'shadow'}>
+        {#if project.border === "mobile"}
             <MockupPhone href="{project.slug ? base+'/projects/'+project.slug : ''}">
                 <img src="{base}/{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
             </MockupPhone>
