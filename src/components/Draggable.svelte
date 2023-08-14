@@ -2,7 +2,7 @@
 
     import {onMount} from "svelte";
 
-    export let snapping: boolean = false;
+    export let snapping: 'mandatory' | 'proximity' | 'none' = 'none';
     export let startScrollLeft: number = 0;
 
     export let scrollLeft: number = startScrollLeft;
@@ -18,11 +18,11 @@
     let prevPageX: number;
     let prevScrollLeft: number;
 
-    //$: itemWidth = (containerElement && containerElement.children.length > 0) ? containerElement.children[0].clientWidth : 0;
+    $: itemWidth = (containerElement && containerElement.children.length > 0) ? containerElement.children[0].clientWidth : 0;
 
     function scrollHorizontal(event: WheelEvent) {
-        if (event.deltaY > 0) containerElement.scrollLeft -= 100;
-        else containerElement.scrollLeft += 100;
+        if (event.deltaY > 0) containerElement.scrollLeft -= itemWidth;
+        else containerElement.scrollLeft += itemWidth;
     }
 
     function dragStart(event: PointerEvent) {
@@ -34,7 +34,7 @@
     function dragging(event: PointerEvent) {
         if (!isDragging) return;
         deltaPos = event.pageX - prevPageX;
-        containerElement.scrollLeft = prevScrollLeft - deltaPos;
+        containerElement.scrollLeft = scrollLeft = prevScrollLeft - deltaPos;
     }
 
     function dragEnd() {
@@ -62,14 +62,14 @@
     */
 </script>
 
-<div class="flex flex-row justify-between w-full gap-2 overflow-x-scroll my-auto pb-1.5"
+<div class="flex flex-row justify-between w-full gap-2.5 overflow-x-scroll my-auto pb-px"
      class:snap-container={snapping}
      bind:this={containerElement}
      on:scroll={() => {scrollLeft = containerElement.scrollLeft}}
      on:wheel|preventDefault|nonpassive={e => scrollHorizontal(e)}
      on:pointerdown={e =>dragStart(e)}>
 
-    <slot/>
+    <slot />
 
 </div>
 
@@ -79,7 +79,7 @@
 
 <style>
     .snap-container {
-        scroll-snap-type: x mandatory;
+        scroll-snap-type: x;
     }
 
     /* width */

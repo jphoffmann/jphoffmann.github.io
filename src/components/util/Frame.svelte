@@ -82,7 +82,7 @@ const borderColors = {
 type BorderColor = typeof borderColors;
 
 let divClass: string;
-$: divClass = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-md', $$props.class);
+$: divClass = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-xl', $$props.class);
 </script>
 
 <svelte:element this={tag} bind:this={node} {...$$restProps} class={divClass} on:click

@@ -88,41 +88,19 @@
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap
          on:click={onAutoClose}
-         class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex', ...getPlacementClasses())}
+         class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full flex', ...getPlacementClasses())}
          tabindex="-1" aria-modal="true" role="dialog">
         <div class="flex relative w-full max-h-full">
             <!-- Modal content -->
-            <Frame rounded shadow {...$$restProps} class={frameClass}>
-                <!-- Modal header -->
-                {#if $$slots.header || title}
-                    <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t border-b">
-                        <slot name="header">
-                            <h3 class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
-                                {title}
-                            </h3>
-                        </slot>
-                        {#if !permanent}
-                            <CloseButton name="Close modal" on:click={hide} color={$$restProps.color}/>
-                        {/if}
-                    </Frame>
-                {:else if !permanent}
-                    <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide}
-                                 color={$$restProps.color}/>
-                {/if}
+            <Frame shadow  class={frameClass}>
                 <!-- Modal body -->
                 <div
-                        class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)}
+                        class={twMerge('px-2 py-2 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)}
                         on:keydown|stopPropagation={handleKeys}
                         role="document"
                         on:wheel|stopPropagation|passive>
                     <slot/>
                 </div>
-                <!-- Modal footer -->
-                {#if $$slots.footer}
-                    <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rounded-b border-t">
-                        <slot name="footer"/>
-                    </Frame>
-                {/if}
             </Frame>
         </div>
     </div>

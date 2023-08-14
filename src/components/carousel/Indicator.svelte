@@ -3,7 +3,7 @@ export let selected = false;
 export let indicatorClass = '';
 </script>
 
-<button type="button" class={indicatorClass} class:active={selected} aria-label={alt} on:click />
+<button type="button" class="{indicatorClass} transition" class:active={selected} aria-label={alt} on:click />
 
 <!--
   @component

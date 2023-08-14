@@ -38,10 +38,10 @@
                             showCaptions={false}
                             showIndicators={false}
                             showThumbs={true}
+                            dark="{false}"
                             imgClass="max-h-[40vh] laptop:max-h-[50vh]"
-                            divClass="ml-2"
-                            thumbClass="m-2 opacity-60 hover:scale-[1.03] transition duration-300 ease-in-out
-                            {data.border === 'mobile' ? 'aspect-[9/16] min-w-[10vh]' : 'aspect-[16/9] min-w-[260px]'}"
+                            thumbClass="opacity-60 hover:scale-[1.03] transition duration-300 ease-in-out rounded-md
+                            {data.border === 'mobile' ? 'aspect-[9/16] min-w-[100px]' : 'aspect-[16/9] min-w-[260px]'}"
                             on:fullscreen={()=>{fullscreenImages = true}}
                             bind:imageShowingIndex={carouselImageIndex}
                     />
@@ -51,12 +51,12 @@
                                 firstImageIndex={carouselImageIndex}
                                 showCaptions={false}
                                 showThumbs={false}
+                                dark="{true}"
                                 imgClass="max-h-[80vh] max-w-[80vw]"
-
                         />
                     </ImageModal>
                 {:else}
-                    <Draggable snapping={true} bind:scrollLeft={draggableScrollLeft}>
+                    <Draggable bind:scrollLeft={draggableScrollLeft}>
                         {#each images as image}
                             <button class="min-w-full snap-center" on:click={() => {fullscreenImages = true}}>
                                 <Slide image="{image.src}"
@@ -69,7 +69,7 @@
 
 
                     <ImageModal bind:open={fullscreenImages} outsideclose>
-                        <Draggable snapping={true} startScrollLeft="{draggableScrollLeft}">
+                        <Draggable startScrollLeft="{draggableScrollLeft}">
                             {#each images as image}
                                 <div class="min-w-full snap-center snap-always">
                                     <Slide image="{image.src}"
