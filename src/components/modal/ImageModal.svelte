@@ -1,18 +1,11 @@
 <script lang="ts">
     import {createEventDispatcher} from 'svelte';
     import {twMerge} from 'tailwind-merge';
-    import Frame from "$components/util/Frame.svelte";
-    import CloseButton from '$components/util/CloseButton.svelte'
-    //import focusTrap from '$components/util/focusTrap.js';
     import focusTrap from "$components/util/focusTrap.js";
 
     export let open = false;
-    export let title = '';
-    export let placement = 'center';
-    export let autoclose = false;
     export let permanent = false;
-    export let backdropClass = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
-    export let defaultClass = 'relative flex flex-col mx-auto';
+    export let backdropClass = 'bg-gray-900 bg-opacity-80';
     export let outsideclose = false;
     const dispatch = createEventDispatcher();
     $: dispatch(open ? 'open' : 'hide');
@@ -31,38 +24,8 @@
         node.focus();
     }
 
-    const getPlacementClasses = () => {
-        switch (placement) {
-            // top
-            case 'top-left':
-                return ['justify-start', 'items-start'];
-            case 'top-center':
-                return ['justify-center', 'items-start'];
-            case 'top-right':
-                return ['justify-end', 'items-start'];
-            // center
-            case 'center-left':
-                return ['justify-start', 'items-center'];
-            case 'center':
-                return ['justify-center', 'items-center'];
-            case 'center-right':
-                return ['justify-end', 'items-center'];
-            // bottom
-            case 'bottom-left':
-                return ['justify-start', 'items-end'];
-            case 'bottom-center':
-                return ['justify-center', 'items-end'];
-            case 'bottom-right':
-                return ['justify-end', 'items-end'];
-            default:
-                return ['justify-center', 'items-center'];
-        }
-    };
-
     const onAutoClose = (e: Event) => {
         const target = e.target as HTMLElement;
-        if (autoclose && target?.tagName === 'BUTTON')
-            hide(e); // close on any button click
         if (outsideclose && target === e.currentTarget)
             hide(e); // close on click outside
     };
@@ -70,10 +33,9 @@
         e.preventDefault();
         open = false;
     };
-    let frameClass = '';
-    $: frameClass = twMerge(defaultClass, 'w-full', $$props.class);
+
     const isScrollable = (e: HTMLElement) => [e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0, e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0];
-    let backdropCls = twMerge(backdropClass, $$props.classBackdrop);
+    let backdropCls = twMerge(backdropClass);
 
     function handleKeys(e: KeyboardEvent) {
         if (e.key === 'Escape' && !permanent)
@@ -84,24 +46,23 @@
 {#if open}
     <!-- backdrop -->
     <div class={twMerge('fixed inset-0 z-40', backdropCls)}/>
-    <!-- dialog -->
+
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap
          on:click={onAutoClose}
-         class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full flex', ...getPlacementClasses())}
-         tabindex="-1" aria-modal="true" role="dialog">
-        <div class="flex relative w-full max-h-full">
-            <!-- Modal content -->
-            <Frame shadow  class={frameClass}>
+         class="fixed top-0 left-0 right-0 h-modal z-50 w-full flex justify-center items-center"
+         tabindex="-1" aria-modal="true" role="dialog"
+    >
+        <div class="w-full shadow-xl bg-gray-800">
                 <!-- Modal body -->
-                <div
-                        class={twMerge('px-2 py-2 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)}
-                        on:keydown|stopPropagation={handleKeys}
-                        role="document"
-                        on:wheel|stopPropagation|passive>
+                <div class=" overflow-y-auto overscroll-contain"
+                     on:keydown|stopPropagation={handleKeys}
+                     role="document"
+                     on:wheel|stopPropagation|passive
+                >
                     <slot/>
                 </div>
-            </Frame>
+
         </div>
     </div>
 {/if}

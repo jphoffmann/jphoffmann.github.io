@@ -52,8 +52,7 @@
     export let thumbBtnClass = '';
     let thumbBtnCls = twMerge(thumbBtnClass, $$props.classBtnThumb);
 
-    export let firstImageIndex: number = 0;
-    export let imageShowingIndex: number = firstImageIndex;
+    export let imageShowingIndex: number = 0;
     $: image = images[imageShowingIndex];
 
 
@@ -86,7 +85,7 @@
 
 </script>
 
-<div {id} class="relative flex justify-center items-center ml-2" class:dark={dark}>
+<div {id} class="relative flex justify-center items-center" class:dark={dark} role="tabpanel">
     <button class="{divCls}" on:click={forwardImageClick}>
         <Slide
                 image={image.src}
@@ -106,9 +105,9 @@
     {#if slideControls}
         <!-- Slider controls -->
         <button on:click={prevSlide} type="button"
-                class="flex absolute left-0 top-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none hover:bg-white/50 dark:hover:bg-gray-900/60 transition"
+                class="flex absolute left-0 top-0 z-10 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none dark:hover:bg-gray-900/60 transition"
                 data-carousel-prev>
-      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:outline-none">
+      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:outline-none">
           <svg aria-hidden="true" class="w-5 h-5 text-white dark:text-gray-300" fill="none"
                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -118,9 +117,9 @@
         </button>
 
         <button on:click={nextSlide} type="button"
-                class="flex absolute right-0 top-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none hover:bg-white/50 dark:hover:bg-gray-900/60 transition"
+                class="flex absolute right-0 top-0 z-10 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none dark:hover:bg-gray-900/60 transition"
                 data-carousel-next>
-      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:outline-none">
+      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:outline-none">
           <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300" fill="none"
                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -136,19 +135,18 @@
 {/if}
 
 {#if showThumbs}
-    <Draggable>
-        {#each images as item, index}
-            <Thumbnail
-                    thumbClass="{thumbCls} m-2"
-                    thumbBtnClass="{thumbBtnCls} snap-normal snap-start"
-                    thumbImg={item.thumb ? item.thumb : item.src}
-                    altTag={item.alt}
-                    id={index}
-                    selected={imageShowingIndex === index}
-                    on:click={() => {
-                            goToSlide(index);
-
-                        }}/>
-        {/each}
-    </Draggable>
+    <div class="mt-2 pb-2 border border-gray-300 rounded-md shadow-inner">
+        <Draggable  scrollAnchorItem="{imageShowingIndex}" autoScrolling>
+            {#each images as item, index}
+                <Thumbnail
+                        thumbClass="{thumbCls}"
+                        thumbBtnClass="{thumbBtnCls} snap-normal snap-start p-2"
+                        thumbImg={item.thumb ? item.thumb : item.src}
+                        altTag={item.alt}
+                        id={index}
+                        selected={imageShowingIndex === index}
+                        on:click={()=>goToSlide(index)}/>
+            {/each}
+        </Draggable>
+    </div>
 {/if}

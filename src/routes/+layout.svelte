@@ -3,7 +3,7 @@
     import "../app.css";
 </script>
 
-<header class="flex justify-between sticky top-0 z-10 bg-grey py-2">
+<header class="flex justify-between sticky top-0 z-20 bg-grey py-2">
     <a class="text-2xl tablet:text-4xl font-bold" href="{base}/" >jh.</a>
     <nav class="flex text-xl font-medium self-center gap-2.5 tablet:gap-4">
         <a href="{base}/projects">Projects</a>

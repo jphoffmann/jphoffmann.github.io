@@ -1,91 +1,95 @@
 <script lang="ts">
-
     import {onMount} from "svelte";
 
-    export let snapping: 'mandatory' | 'proximity' | 'none' = 'none';
-    export let startScrollLeft: number = 0;
+    export let scrollSnapping = false;
 
-    export let scrollLeft: number = startScrollLeft;
+    //scroll the container if the anchor item changes
+    export let autoScrolling = false;
+    export let scrollAnchorItem: number = 0;
 
-    let containerElement: HTMLElement;
-    onMount(() => {
-            containerElement.scrollLeft = startScrollLeft;
-    });
-
-    let isDragging: boolean;
-
+    let itemWidth: number = 0;
+    let isDragging: boolean = false;
     let deltaPos: number;
     let prevPageX: number;
     let prevScrollLeft: number;
 
-    $: itemWidth = (containerElement && containerElement.children.length > 0) ? containerElement.children[0].clientWidth : 0;
+    let containerElement: HTMLElement;
 
+    $: {
+        if (autoScrolling)
+            scrollToAnchor(itemWidth * scrollAnchorItem);
+    }
+
+    onMount(async () => {
+        if (containerElement.children.length > 0) {
+            itemWidth = containerElement.children[0].clientWidth;
+        }
+
+        containerElement.scrollLeft = itemWidth * scrollAnchorItem;
+    });
+
+    function scrollTo(left: number) {
+        if (containerElement) containerElement.scrollTo({left: left, behavior: "smooth"})
+
+    }
+
+    //Mousewheel scrolling, bad experience on Mac Trackpad.
     function scrollHorizontal(event: WheelEvent) {
         if (event.deltaY > 0) containerElement.scrollLeft -= itemWidth;
         else containerElement.scrollLeft += itemWidth;
     }
 
-    function dragStart(event: PointerEvent) {
+    function scrollToAnchor(anchorLeft: number) {
+        if (!containerElement) return;
+
+        if (anchorLeft + itemWidth > containerElement.scrollLeft + containerElement.clientWidth) {
+            scrollTo(anchorLeft);
+        } else if (anchorLeft < containerElement.scrollLeft) {
+            scrollTo(anchorLeft + itemWidth - containerElement.clientWidth)
+        }
+    }
+
+    function dragStart(event: MouseEvent) {
         isDragging = true;
         prevPageX = event.pageX;
         prevScrollLeft = containerElement.scrollLeft;
     }
 
-    function dragging(event: PointerEvent) {
+    function dragging(event: MouseEvent) {
         if (!isDragging) return;
         deltaPos = event.pageX - prevPageX;
-        containerElement.scrollLeft = scrollLeft = prevScrollLeft - deltaPos;
+        containerElement.scrollLeft = prevScrollLeft - deltaPos;
     }
 
     function dragEnd() {
         isDragging = false;
-        //if (centerItems) slideToCenter();
+        if(!autoScrolling)
+            scrollAnchorItem = Math.floor(containerElement.scrollLeft / itemWidth);
     }
-
-    /*
-        function slideToCenter() {
-            if (containerElement.scrollLeft == (containerElement.scrollWidth - containerElement.clientWidth)) return;
-
-            deltaPos = Math.abs(deltaPos);
-            let valDifference = itemWidth - deltaPos;
-
-            console.log(deltaPos + 'delta');
-            console.log(itemWidth / 2);
-            console.log(deltaPos > itemWidth / 2)
-
-            //console.log(valDifference + 'val');
-            if (containerElement.scrollLeft > prevScrollLeft) {
-                return containerElement.scrollLeft += deltaPos > itemWidth / 2 ? valDifference : -deltaPos;
-            }
-            return containerElement.scrollLeft -= deltaPos > itemWidth / 2 ? valDifference : -deltaPos;
-        }
-    */
 </script>
 
-<div class="flex flex-row justify-between w-full gap-2.5 overflow-x-scroll my-auto pb-px"
-     class:snap-container={snapping}
+
+<div class="flex flex-row justify-between w-full overflow-y-hidden overflow-x-scroll my-auto pb-px"
+     class:snap-mandatory={scrollSnapping}
      bind:this={containerElement}
-     on:scroll={() => {scrollLeft = containerElement.scrollLeft}}
-     on:wheel|preventDefault|nonpassive={e => scrollHorizontal(e)}
-     on:pointerdown={e =>dragStart(e)}>
-
-    <slot />
-
+     on:pointerdown={e =>dragStart(e)}
+>
+    <slot/>
 </div>
 
 <svelte:window
-        on:pointermove|preventDefault={e =>dragging(e)}
+        on:mousemove|preventDefault={e =>dragging(e)}
         on:pointerup={dragEnd}/>
 
+
 <style>
-    .snap-container {
-        scroll-snap-type: x;
+    .snap-mandatory {
+        scroll-snap-type: x mandatory;
     }
 
     /* width */
     ::-webkit-scrollbar {
         width: 5px;
-
     }
 
     /* Track */
@@ -93,16 +97,19 @@
         background: #f1f1f1;
         border-radius: 10px;
         margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: #888;
         border-radius: 10px;
+        background-color: rgb(31 41 55 / 0.3);
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background-color: rgb(31 41 55 / 0.6);
     }
 </style>
+
+<!--on:scroll={() => {scrollLeft = containerElement.scrollLeft}}-->

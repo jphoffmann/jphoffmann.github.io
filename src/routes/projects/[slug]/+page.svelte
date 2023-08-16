@@ -11,7 +11,7 @@
 
     let fullscreenImages = false;
 
-    let draggableScrollLeft: number = 0;
+    let draggableImageIndex: number = 0;
     let carouselImageIndex: number = 0;
 
     let images: Image[] = [];
@@ -30,7 +30,7 @@
 
 <div class="flex flex-wrap justify-between mb-10 h-full rounded">
     {#if data.images}
-        <div class="dark pb-5 max-w-full laptop:max-w-[65%] laptop:h-max">
+        <div class="pb-5 max-w-full laptop:max-w-[65%] laptop:h-max">
             <MediaQuery query="(min-width: 640px)" let:matches>
                 {#if matches}
                     <Carousel
@@ -39,29 +39,31 @@
                             showIndicators={false}
                             showThumbs={true}
                             dark="{false}"
-                            imgClass="max-h-[40vh] laptop:max-h-[50vh]"
-                            thumbClass="opacity-60 hover:scale-[1.03] transition duration-300 ease-in-out rounded-md
-                            {data.border === 'mobile' ? 'aspect-[9/16] min-w-[100px]' : 'aspect-[16/9] min-w-[260px]'}"
+                            imgClass="max-h-[40vh] laptop:max-h-[55vh] shadow-xl"
+                            thumbClass="opacity-60  rounded-md shadow-md
+                            {data.border === 'mobile' ? 'aspect-[9/16] min-w-[100px] laptop:min-w-[125px]' : 'aspect-[16/9] min-w-[260px]'}"
+                            thumbBtnClass="hover:scale-[1.03] transition duration-300 ease-in-out"
                             on:fullscreen={()=>{fullscreenImages = true}}
                             bind:imageShowingIndex={carouselImageIndex}
                     />
                     <ImageModal bind:open={fullscreenImages} outsideclose>
                         <Carousel
                                 {images}
-                                firstImageIndex={carouselImageIndex}
+                                imageShowingIndex={carouselImageIndex}
                                 showCaptions={false}
                                 showThumbs={false}
                                 dark="{true}"
+                                divClass="cursor-auto"
                                 imgClass="max-h-[80vh] max-w-[80vw]"
                         />
                     </ImageModal>
                 {:else}
-                    <Draggable bind:scrollLeft={draggableScrollLeft}>
+                    <Draggable bind:scrollAnchorItem={draggableImageIndex} scrollSnapping>
                         {#each images as image}
                             <button class="min-w-full snap-center" on:click={() => {fullscreenImages = true}}>
                                 <Slide image="{image.src}"
                                        alt="{image.alt}"
-                                       imgClass="mx-auto {data.border === 'mobile' ? 'aspect-[9/16] h-[40vh]' : 'aspect-[16/9] min-w-full'}"
+                                       imgClass="mx-auto pb-2  {data.border === 'mobile' ? 'aspect-[9/16] h-[40vh]' : 'aspect-[16/9] min-w-full'}"
                                 />
                             </button>
                         {/each}
@@ -69,14 +71,13 @@
 
 
                     <ImageModal bind:open={fullscreenImages} outsideclose>
-                        <Draggable startScrollLeft="{draggableScrollLeft}">
+                        <Draggable bind:scrollAnchorItem="{draggableImageIndex}" scrollSnapping>
                             {#each images as image}
-                                <div class="min-w-full snap-center snap-always">
-                                    <Slide image="{image.src}"
-                                           alt="{image.alt}"
-                                           imgClass="mx-auto pb-2 {data.border === 'mobile' ? 'aspect-[9/16] max-h-[60vh]' : 'aspect-[16/9] min-w-full'}"
-                                    />
-                                </div>
+                                <Slide image="{image.src}"
+                                       alt="{image.alt}"
+                                       slideClass="min-w-full snap-center snap-always"
+                                       imgClass="mx-auto pb-2 {data.border === 'mobile' ? 'aspect-[9/16] max-h-[60vh]' : 'aspect-[16/9] min-w-full'}"
+                                />
                             {/each}
                         </Draggable>
                     </ImageModal>
