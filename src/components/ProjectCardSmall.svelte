@@ -6,8 +6,7 @@
     export let project: Project;
 </script>
 
-<article class="min-w-[300px]">
-
+<article>
     <!-- Thumbnail -->
     <div class="relative flex justify-center w-full mb-6 overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat {project.border === 'shadow' ? 'shadow-lg':''}">
         {#if project.thumbnail}
@@ -28,13 +27,13 @@
     </div>
 
 
-    <!-- Description -->
-    <div>
+    <!-- Description-->
+    <div class="mt-auto">
         <h2 class="text-2xl font-bold">{project.title}</h2>
-
+        <!--
         {#if project.description}
             <p class="mb-6 text-neutral-500">{project.description}</p>
         {/if}
+        -->
     </div>
-
 </article>

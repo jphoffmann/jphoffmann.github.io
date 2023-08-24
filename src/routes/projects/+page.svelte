@@ -7,7 +7,7 @@
 <section>
     <h2 class="my-16 text-center">Previous Projects</h2>
 
-    <div class="gallery grid gap-[50px] justify-center" style="grid-template-columns: repeat(auto-fit, minmax(300px, 600px))">
+    <div class="flex justify-between gap-14 self-center" >
         {#each Object.values(projects.finished) as values}
             <ProjectCardSmall project="{values}" />
         {/each}

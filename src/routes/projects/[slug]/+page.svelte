@@ -4,6 +4,7 @@
     import MediaQuery from "svelte-media-queries";
     import Draggable from "$components/Draggable.svelte";
     import ImageModal from "$components/modal/ImageModal.svelte";
+    import TechStack from "$components/TechStack.svelte";
 
     export let data;
 
@@ -81,17 +82,17 @@
 
 
     <div class="laptop:max-w-[30%]">
-        <div class="pb-5">
+        <div class="mb-5">
             <p>{data.description}</p>
             <slot name="description"/>
         </div>
-        <div class="pb-5">
-            <h3 class="font-bold">Technologies</h3>
-            {data.tech.map(tech => ' ' + tech)}
+        <div class="mb-5">
+            <h3 class="font-bold mb-1">Technologies</h3>
+            <TechStack items={data.tech}/>
         </div>
         {#if data.colleagues}
             <div>
-                <h3 class="font-bold">Colleagues</h3>
+                <h3 class="font-bold mb-1">Colleagues</h3>
                 {data.colleagues}
             </div>
         {/if}

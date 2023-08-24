@@ -13,16 +13,23 @@
 
 <article class="flex flex-wrap-reverse tablet:flex-nowrap py-10 laptop:py-20">
     <!-- Description -->
-    <div class="tablet:w-[35%] px-2 tablet:px-0 laptop:pr-6">
+    <div class="flex flex-col tablet:w-[35%] px-2 tablet:px-0 laptop:pr-6">
         <h2 class="text-2xl font-bold">{project.title}</h2>
 
         <p class="mb-4 laptop:mb-6 text-sm text-neutral-500">{project.date}</p>
 
         <p class="mb-4 laptop:mb-6 text-neutral-500">{desc || project.description}</p>
 
-        <div class="text-sm text-neutral-500">
-            <TechStack items="{project.tech}"/>
+        <div class="mb-4 laptop:mb-6 text-sm text-neutral-500">
+            <TechStack items="{project.tech}" useTooltip/>
         </div>
+
+        <div class="mx-auto tablet:mx-0 mt-4 tablet:mt-auto">
+            <button class="btn btn-blue px-7">
+                <a class="tablet:text-xl" href="{base}/projects/{project.slug}">See more</a>
+            </button>
+        </div>
+
     </div>
 
     <!-- Thumbnail -->
