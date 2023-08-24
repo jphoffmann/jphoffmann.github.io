@@ -16,8 +16,7 @@
         </h1>
         <p class="text-xl tablet:text-3xl laptop:text-4xl text-medium-grey tablet:py-20 tablet:w-[60%] ml-auto">Software
             Developer and student
-            at TU Vienna
-            who likes interesting challenges.</p>
+            at TU Vienna.</p>
 
         <a href="#Projects" on:click|preventDefault={() => smoothScroll.scrollTo('Projects')} class="w-fit">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -29,14 +28,15 @@
     </section>
 
     <section id="Projects" class="divide-y divide-gray-300">
-        <ProjectCard project="{projects.finished.crestfallen_opengl}"/>
+        <ProjectCard project={projects.finished.crestfallen_opengl}
+                     desc="3D-Platformer built with OpenGL in C++ to showcase graphical effects."/>
 
-        <ProjectCard project="{projects.finished.cinemacurve}"/>
+        <ProjectCard project={projects.finished.cinemacurve}
+                     desc="A cinema ticket distribution site with several management tools."/>
 
-        <ProjectCard project="{projects.finished.crestfallen_mobile}"
+        <ProjectCard project={projects.finished.crestfallen_mobile}
                      thumbnail="projects/crestfallen-mobile/crestfallen-mobile-damage.gif"
-                     desc="2D-Platformer inspired by Jump King. Written in Android-Studio/ Java,
-                     utilising Android Jetpack and SQLite."/>
+                     desc="2D-Platformer inspired by Jump King. Written to familiarize myself with Android applications."/>
 
         <article class="flex flex-col tablet:flex-row py-10 laptop:py-20">
             <div class="tablet:w-[35%] px-2 tablet:px-0 laptop:pr-6">
@@ -48,7 +48,8 @@
                      alt="Svelte-kit logo">
                 <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/tailwindcss-logotype.svg"
                      alt="Tailwind CSS logo">
-                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/WebStorm_Icon.svg" alt="Webstorm logo">
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/WebStorm_Icon.svg"
+                     alt="Webstorm logo">
             </div>
         </article>
 

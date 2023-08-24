@@ -7,23 +7,32 @@
     import type {Image} from '$lib/project'
     import Draggable from "$components/Draggable.svelte";
     import {createEventDispatcher} from 'svelte';
+    import GIF from "$components/GIF.svelte";
+    import type {ComponentType} from "svelte/src/runtime/internal/public";
 
     export let id = 'default-carousel';
     export let showIndicators = true;
     export let showCaptions = true;
     export let showThumbs = true;
+    export let slideControls = true;
 
     export let dark = false;
 
-    export let images: Image[] = [];
-
     export let gifs: Image[] = [];
+    export let images: Image[];
 
-    $: items = [gifs, images];
+    let items = specifyComponent(images, Slide).concat(specifyComponent(gifs, GIF));
 
-    export let slideControls = true;
-    export let loop = false;
-    export let duration = 2000;
+    function specifyComponent(images: Image[], type: ComponentType) {
+        return images.map(image => {
+                return {
+                    image: image,
+                    component: type
+                }
+            }
+        )
+    }
+
     // Carousel
     export let divClass = '';
     let divCls = twMerge(divClass, $$props.classDiv);
@@ -52,30 +61,24 @@
     export let thumbBtnClass = '';
     let thumbBtnCls = twMerge(thumbBtnClass, $$props.classBtnThumb);
 
-    export let imageShowingIndex: number = 0;
-    $: image = images[imageShowingIndex];
-
+    export let itemShowingIndex: number = 0;
+    $: item = items[itemShowingIndex];
 
     const nextSlide = () => {
-        if (imageShowingIndex === images.length - 1) {
-            imageShowingIndex = 0;
+        if (itemShowingIndex === items.length - 1) {
+            itemShowingIndex = 0;
         } else {
-            imageShowingIndex += 1;
+            itemShowingIndex += 1;
         }
     };
     const prevSlide = () => {
-        if (imageShowingIndex === 0) {
-            imageShowingIndex = images.length - 1;
+        if (itemShowingIndex === 0) {
+            itemShowingIndex = items.length - 1;
         } else {
-            imageShowingIndex -= 1;
+            itemShowingIndex -= 1;
         }
     };
-    const goToSlide = (number: number) => (imageShowingIndex = number);
-    if (loop) {
-        setInterval(() => {
-            nextSlide();
-        }, duration);
-    }
+    const goToSlide = (number: number) => (itemShowingIndex = number);
 
     const dispatch = createEventDispatcher();
 
@@ -85,28 +88,31 @@
 
 </script>
 
-<div {id} class="relative flex justify-center items-center" class:dark={dark} role="tabpanel">
-    <button class="{divCls}" on:click={forwardImageClick}>
-        <Slide
-                image={image.src}
-                alt={image.alt}
-                slideClass={slideCls}
-                imgClass={imgCls}/>
-    </button>
-    {#if showIndicators}
-        <!-- Slider indicators -->
-        <div class={indicatorDivCls}>
-            {#each images as {src, alt}, index}
-                <Indicator {alt} selected={imageShowingIndex === index} on:click={() => goToSlide(index)}
-                           indicatorClass={indicatorCls}/>
-            {/each}
-        </div>
-    {/if}
-    {#if slideControls}
-        <!-- Slider controls -->
-        <button on:click={prevSlide} type="button"
-                class="flex absolute left-0 top-0 z-10 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none dark:hover:bg-gray-900/60 transition"
-                data-carousel-prev>
+{#if item}
+    <div {id} class="relative flex justify-center items-center" class:dark={dark} role="tabpanel">
+        <button class="{divCls}" aria-label="Click to view image in fullscreen" on:click={forwardImageClick}>
+            <Slide
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    slideClass={slideClass}
+                    imgClass={imgClass}/>
+            <!--<svelte:component this="{item.component}" {...item.props}/>-->
+        </button>
+        {#if showIndicators}
+            <!-- Slider indicators -->
+            <div class={indicatorDivCls}>
+                {#each items as item, index}
+                    <Indicator alt={item.image.alt} selected={itemShowingIndex === index}
+                               on:click={() => goToSlide(index)}
+                               indicatorClass={indicatorCls}/>
+                {/each}
+            </div>
+        {/if}
+        {#if slideControls}
+            <!-- Slider controls -->
+            <button on:click={prevSlide} type="button"
+                    class="flex absolute left-0 top-0 z-10 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none dark:hover:bg-gray-900/60 transition"
+                    data-carousel-prev>
       <span class="inline-flex justify-center items-center w-8 h-8 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:outline-none">
           <svg aria-hidden="true" class="w-5 h-5 text-white dark:text-gray-300" fill="none"
                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -114,11 +120,11 @@
           </svg>
           <span class="hidden">Previous</span>
       </span>
-        </button>
+            </button>
 
-        <button on:click={nextSlide} type="button"
-                class="flex absolute right-0 top-0 z-10 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none dark:hover:bg-gray-900/60 transition"
-                data-carousel-next>
+            <button on:click={nextSlide} type="button"
+                    class="flex absolute right-0 top-0 z-10 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none dark:hover:bg-gray-900/60 transition"
+                    data-carousel-next>
       <span class="inline-flex justify-center items-center w-8 h-8 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:outline-none">
           <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300" fill="none"
                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -126,25 +132,28 @@
           </svg>
           <span class="hidden">Next</span>
       </span>
-        </button>
-    {/if}
-</div>
+            </button>
+        {/if}
+    </div>
+{/if}
+
 
 {#if showCaptions}
-    <Caption caption={images[imageShowingIndex].alt} captionClass={captionCls}/>
+    <Caption caption={items[itemShowingIndex].image.alt} captionClass={captionCls}/>
 {/if}
 
 {#if showThumbs}
     <div class="mt-2 pb-2 border border-gray-300 rounded-md shadow-inner">
-        <Draggable  scrollAnchorItem="{imageShowingIndex}" autoScrolling>
-            {#each images as item, index}
+        <Draggable scrollAnchorItem="{itemShowingIndex}" autoScrolling>
+            {#each items as item, index}
                 <Thumbnail
                         thumbClass="{thumbCls}"
                         thumbBtnClass="{thumbBtnCls} snap-normal snap-start p-2"
-                        thumbImg={item.thumb ? item.thumb : item.src}
-                        altTag={item.alt}
+                        src={item.image.thumb ? item.image.thumb : item.image.src}
+                        alt={item.image.alt}
+                        type="{item.component}"
                         id={index}
-                        selected={imageShowingIndex === index}
+                        selected={itemShowingIndex === index}
                         on:click={()=>goToSlide(index)}/>
             {/each}
         </Draggable>

@@ -1,5 +1,7 @@
-<script>
-    export let image = '';
+<script lang="ts">
+    import {base} from "$app/paths";
+
+    export let src = '';
     export let alt = '';
     export let attr = '';
     export let slideClass = '';
@@ -7,8 +9,8 @@
 </script>
 
 <div class={slideClass}>
-    {#key image}
-        <img src={image} {alt} title={attr} class={imgClass}/>
+    {#key src}
+        <img src="{base}/{src}" {alt} title={attr} class={imgClass}/>
     {/key}
 </div>
 

@@ -25,7 +25,7 @@
           "alt": ""
         }
       ],
-      "gif": [
+      "gifs": [
         {
           "src": "projects/crestfallen/shadow-1-720p.gif",
           "alt": "",
@@ -131,13 +131,6 @@
         {
           "src": "projects/crestfallen-mobile/Screenshot_7.png",
           "alt": ""
-        }
-      ],
-      "gif": [
-        {
-          "src": "projects/crestfallen-mobile/crestfallen-mobile-damage.gif",
-          "alt": "",
-          "thumb": "projects/crestfallen-mobile/crestfallen-mobile-damage-thumb.png"
         }
       ],
       "thumbnail": {
