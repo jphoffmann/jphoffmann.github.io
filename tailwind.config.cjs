@@ -8,7 +8,7 @@ const config = {
         screens: {
             'tablet': '640px',
             'laptop': '1280px',
-            'desktop': '2560px'
+            'desktop': '1920px'
         },
         extend: {
             colors: {

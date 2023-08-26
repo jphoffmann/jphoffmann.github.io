@@ -15,10 +15,10 @@
     <div class="flex laptop:gap-2.5 {alignment === 'horizontal' ? 'flex-wrap':'flex-col'}">
         {#each items as item}
             {#if tech.has(item)}
-                <div class="inline-block relative rounded-[0.5rem] p-1 w-min
+                <div class="inline-block relative rounded-[0.5rem] px-1.5 py-1 tablet:p-1 w-min
                             hover:bg-[hsl(0,0%,90%,1)] transition duration-300 ease-in-out">
                     <img src="{base}/icons/{tech.get(item)}" alt="{item} Logo"
-                         class="min-w-[40px] max-w-[100px] h-[30px] laptop:h-[40px]"/>
+                         class="min-w-[30px] laptop:min-w-[40px] max-w-[80px] laptop:max-w-[100px] h-[30px] laptop:h-[40px]"/>
                 </div>
 
                 <Tooltip type="custom" class="bg-dark-grey text-grey font-semibold">{item}</Tooltip>
@@ -32,7 +32,7 @@
         {#each items as item}
             {#if tech.has(item)}
                 <img src="{base}/icons/{tech.get(item)}" alt="{item} Logo"
-                     class="m-1 min-w-[40px] max-w-[100px] h-[30px] laptop:h-[40px]"/>
+                     class="m-1 min-w-[30px] laptop:min-w-[40px] max-w-[80px] laptop:max-w-[100px] h-[30px] laptop:h-[40px]"/>
 
                 {item}
             {/if}

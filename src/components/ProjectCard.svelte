@@ -24,11 +24,11 @@
             <TechStack items="{project.tech}" useTooltip/>
         </div>
 
-        <div class="mx-auto tablet:mx-0 mt-4 tablet:mt-auto">
-            <button class="btn btn-blue px-7">
-                <a class="tablet:text-xl" href="{base}/projects/{project.slug}">See more</a>
-            </button>
-        </div>
+        {#if project.slug}
+            <div class="mx-auto tablet:mx-0 mt-4 tablet:mt-auto">
+                <a class="btn btn-blue tablet:text-xl" href="{base}/projects/{project.slug}" role="button">See more</a>
+            </div>
+        {/if}
 
     </div>
 

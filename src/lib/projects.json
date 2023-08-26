@@ -3,7 +3,13 @@
     "crestfallen_opengl": {
       "title": "Crestfallen",
       "date": "03.2020 – 06.2020",
-      "description": "3D-Platformer built with OpenGL in C++ to showcase graphical effects. Implemented dynamic shadows with StencilShadow-Volumes.",
+      "description": "Crestfallen is a 3D-Platformer built with OpenGL in C++ to showcase graphical effects.",
+      "experience": [
+        "In this project, I was able to implement dynamic shadows using Stencil Shadow Volumes, a hierarchical animation system, view-frustum-culling and collision-detection using Nvidia PhysX.",
+        "Writing a basic low-level game engine in C++, debugging with Visual Studio.",
+        "First experience in the creation of 3D-Assets optimized for video games, as well as systems and formats for asset loading.",
+        "Graphical debugging with Nvidia Nsight."
+      ],
       "tech": [
         "C++",
         "OpenGL",
@@ -47,7 +53,14 @@
     "cinemacurve": {
       "title": "Cinemacurve",
       "date": "04.2020 – 06.2020",
-      "description": "A cinema ticket distribution site as well as several admin tools.",
+      "description": "Cinemacurve is a cinema ticket distribution site with several management tools.",
+      "experience": [
+        "Within a team of 5 people, I went through the process of planning and cooperating a medium-sized project from concept to release.",
+        "Working in a SCRUM workflow with one-week sprints and weekly meetings with tutors/assistants representing as stakeholders.",
+        "Ensured unit test coverage and coordination of integration tests after each sprint cycle.",
+        "Designed and implemented a RESTful backend API with a 3‐tier architecture (service, business, persistence).",
+        "First hands-on experience writing a responsive frontend UI with Angular and Bootstrap."
+      ],
       "tech": [
         "Angular",
         "TypeScript",
@@ -86,7 +99,11 @@
     "crestfallen_mobile": {
       "title": "Crestfallen Mobile",
       "date": "03.2021 – 06.2021",
-      "description": "2D-Platformer written in Android-Studio/ Java, utilising Android Jetpack and SQLite.\n Implemented custom collision handling, scene structure and management of gameobjects.",
+      "description": "Crestfallen Mobile is a 2D-Platformer made within the \"Multimedia\" course at TU Vienna. Its goal was to learn the handling of multimedia content on the Android platform. It made the Top-10 Hall of Fame from a selection of 57 games!",
+      "experience": [
+        "Was responsible for implementing all gameplay systems, a custom character controller, the scene structure, data persistence and UI.",
+        "Using the Android Jetpack Suite for data persistence and responsive UI layout components."
+      ],
       "tech": [
         "Android Studio",
         "Android Jetpack",
@@ -181,7 +198,8 @@
     "Unity": "Unity_Technologies_logo.svg",
     "C#": "c--4.svg",
     "Maven": "maven_icon.svg",
-    "Gradle": "gradle-icon.svg"
+    "Gradle": "gradle-icon.svg",
+    "Android Jetpack": "android-jetpack.png"
   }
 }
 

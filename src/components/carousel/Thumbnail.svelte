@@ -15,14 +15,13 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<button on:click aria-label="Click to view image" class="{thumbBtnClass} relative">
+<button on:click on:dragstart|preventDefault aria-label="Click to view image" class="{thumbBtnClass} relative">
     <img class="{thumbClass} "
          class:active={selected}
          id={id.toString()}
          src="{base}/{src}"
          {alt}
-         title="Image from {titleLink}"
-         on:dragstart|preventDefault>
+         title="Image from {titleLink}">
 
     {#if type === GIF}
         <img src="{base}/icons/gif.svg" alt="GIF icon"

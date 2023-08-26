@@ -55,16 +55,22 @@
 
     </section>
 
-    <section id="About" class="pt-40">
-        <h2 class="my-4">About</h2>
+
+
+    <section id="About" class="mt-20">
+        <h2 class="mb-4">About</h2>
         <div class="tablet:flex">
             <img src="{base}/portrait.jpg" alt="Portrait of myself"
                  class="mx-auto tablet:mx-0 tablet:mr-20 laptop:mr-40 w-[150px] tablet:w-[250px] h-auto">
 
-            <p class="tablet:text-2xl laptop:text-3xl laptop:w-[50%] pt-8
-                  text-justify hyphens-auto tablet:text-left tablet:hyphens-none">
-                Currently enrolled at TU Vienna, I am a media informatics student with experience
-                in web and game development.
+            <p class="tablet:text-xl laptop:text-2xl laptop:w-[50%] pt-8
+                  text-justify tablet:text-left hyphens-auto tablet:hyphens-none">
+                I am currently enrolled at TU Vienna, finishing my BSc in
+                <a class="text-black font-medium hover:underline"
+                   href="https://informatics.tuwien.ac.at/bachelor/media-informatics-and-visual-computing/">
+                    Media Informatics and Visual Computing.
+                </a>
+                In my studies, I have gained experience in Software Engineering, Computer Graphics, Human-Centered-Design, Computer Vision, Web and Game Development.
             </p>
         </div>
 
@@ -86,9 +92,10 @@
             <div class="flex flex-col mx-auto tablet:ml-auto tablet:mr-0">
                 <a class="tablet:text-xl mb-6"
                    href="mailto:jp.hoffmann96@gmail.com">jp.hoffmann96@gmail.com</a>
-                <button class="btn btn-blue max-w-fit px-7 mx-auto laptop:mx-0">
-                    <a class="tablet:text-xl" href="{base}/Hoffmann_CV.pdf" target="_blank">View Resume</a>
-                </button>
+
+                <a class="btn btn-blue max-w-fit mx-auto laptop:mx-0 tablet:text-xl" href="{base}/Hoffmann_CV.pdf"
+                   target="_blank" role="button">View Resume</a>
+
             </div>
         </div>
     </section>

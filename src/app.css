@@ -12,7 +12,7 @@
 
     body {
         @apply max-w-[1800px] min-w-[350px] mx-auto my-1 laptop:my-10 px-8 laptop:px-20
-        bg-grey text-dark-grey scroll-smooth motion-reduce:scroll-auto
+        bg-grey text-dark-grey
     }
 
     h2 {
@@ -28,6 +28,20 @@
 
     @font-face {
         font-family: 'DM Sans';
+        src: local('DMSans'), url('/fonts/DMSans/DMSans-Medium.ttf');
+        font-weight: 500;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'DM Sans';
+        src: local('DMSans'), url('/fonts/DMSans/DMSans-SemiBold.ttf');
+        font-weight: 600;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'DM Sans';
         src: local('DMSans'), url('/fonts/DMSans/DMSans-Bold.ttf');
         font-weight: bold;
         font-display: swap;
@@ -36,7 +50,7 @@
 
 @layer components {
     .btn {
-        @apply font-bold py-2 px-4 rounded;
+        @apply font-bold py-2 px-7 rounded;
     }
 
     .btn-blue {

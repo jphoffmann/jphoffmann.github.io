@@ -2,6 +2,7 @@ export type Project = {
     title: string;
     date: string,
     description?: string,
+    experience?: string[],
     tech: string[],
     colleagues?: string,
     slug?: string,

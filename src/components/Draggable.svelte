@@ -77,9 +77,7 @@
     <slot/>
 </div>
 
-<svelte:window
-        on:mousemove|preventDefault={e =>dragging(e)}
-        on:pointerup={dragEnd}/>
+<svelte:window on:mousemove={e =>dragging(e)} on:pointerup={dragEnd}/>
 
 
 <style>
