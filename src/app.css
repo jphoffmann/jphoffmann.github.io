@@ -19,6 +19,10 @@
         @apply text-lg font-medium uppercase
     }
 
+    h3 {
+        @apply font-bold mb-1
+    }
+
     @font-face {
         font-family: 'DM Sans';
         src: local('DMSans'), url('/fonts/DMSans/DMSans-Regular.ttf');

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import {base} from "$app/paths";
     import type {Project} from "$lib/project";
     import MockupPhone from "$components/MockupPhone.svelte";
     import TechStack from "$components/TechStack.svelte";
@@ -26,7 +25,7 @@
 
         {#if project.slug}
             <div class="mx-auto tablet:mx-0 mt-4 tablet:mt-auto">
-                <a class="btn btn-blue tablet:text-xl" href="{base}/projects/{project.slug}" role="button">See more</a>
+                <a class="btn btn-blue tablet:text-xl" href="/projects/{project.slug}" role="button">See more</a>
             </div>
         {/if}
 
@@ -36,14 +35,14 @@
     <div class="tablet:w-[60%] w-full h-fit mb-6 tablet:mb-0 tablet:ml-auto
          relative overflow-hidden rounded-lg" class:shadow-lg={project.border === 'shadow'}>
         {#if project.border === "mobile"}
-            <MockupPhone href="{project.slug ? base+'/projects/'+project.slug : ''}">
-                <img src="{base}/{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+            <MockupPhone href="{project.slug ? '/projects/'+project.slug : ''}">
+                <img src="{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
             </MockupPhone>
         {:else if thumbnail || project.thumbnail}
-            <img src="{base}/{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
+            <img src="{thumbnail || project.thumbnail.src}" alt="{project.thumbnail.alt}"/>
 
             {#if project.slug}
-                <a href="{base}/projects/{project.slug}"
+                <a href="/projects/{project.slug}"
                    class="absolute top-0 right-0 bottom-0 left-0
                    bg-[hsl(0,0%,98.4%,0.2)] opacity-0 hover:opacity-100
                    transition duration-300 ease-in-out">

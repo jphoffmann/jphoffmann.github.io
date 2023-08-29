@@ -2,7 +2,6 @@
     import ProjectCard from '$components/ProjectCard.svelte';
     import projects from '$lib/projects.json';
     import {SmoothScroll} from "$lib/SmoothScroll";
-    import {base} from "$app/paths";
 
     const smoothScroll = new SmoothScroll(500);
 </script>
@@ -35,7 +34,7 @@
                      desc="A cinema ticket distribution site with several management tools."/>
 
         <ProjectCard project={projects.finished.crestfallen_mobile}
-                     thumbnail="projects/crestfallen-mobile/crestfallen-mobile-damage.gif"
+                     thumbnail="/projects/crestfallen-mobile/crestfallen-mobile-damage.gif"
                      desc="2D-Platformer inspired by Jump King. Written to familiarize myself with Android applications."/>
 
         <article class="flex flex-col tablet:flex-row py-10 laptop:py-20">
@@ -44,11 +43,11 @@
                 <p class="mb-7 tablet:mb-0 text-sm text-neutral-500">2023</p>
             </div>
             <div class="flex justify-around gap-5 tablet:gap-5 tablet:w-[60%] tablet:ml-auto">
-                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/Svelte-kit-horizontal.svg"
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="/icons/Svelte-kit-horizontal.svg"
                      alt="Svelte-kit logo">
-                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/tailwindcss-logotype.svg"
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="/icons/tailwindcss-logotype.svg"
                      alt="Tailwind CSS logo">
-                <img class="max-w-[310px] max-h-[50px] min-w-0" src="{base}/icons/WebStorm_Icon.svg"
+                <img class="max-w-[310px] max-h-[50px] min-w-0" src="/icons/WebStorm_Icon.svg"
                      alt="Webstorm logo">
             </div>
         </article>
@@ -60,7 +59,7 @@
     <section id="About" class="mt-20">
         <h2 class="mb-4">About</h2>
         <div class="tablet:flex">
-            <img src="{base}/portrait.jpg" alt="Portrait of myself"
+            <img src="/portrait.jpg" alt="Portrait of myself"
                  class="mx-auto tablet:mx-0 tablet:mr-20 laptop:mr-40 w-[150px] tablet:w-[250px] h-auto">
 
             <p class="tablet:text-xl laptop:text-2xl laptop:w-[50%] pt-8
@@ -93,7 +92,7 @@
                 <a class="tablet:text-xl mb-6"
                    href="mailto:jp.hoffmann96@gmail.com">jp.hoffmann96@gmail.com</a>
 
-                <a class="btn btn-blue max-w-fit mx-auto laptop:mx-0 tablet:text-xl" href="{base}/Hoffmann_CV.pdf"
+                <a class="btn btn-blue max-w-fit mx-auto laptop:mx-0 tablet:text-xl" href="/Hoffmann_CV.pdf"
                    target="_blank" role="button">View Resume</a>
 
             </div>

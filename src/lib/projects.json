@@ -19,32 +19,32 @@
       "colleagues": "Michael Steinkellner",
       "images": [
         {
-          "src": "projects/crestfallen/crestfallen-1.jpg",
+          "src": "/projects/crestfallen/crestfallen-1.jpg",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen/crestfallen-2.jpg",
+          "src": "/projects/crestfallen/crestfallen-2.jpg",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen/crestfallen-3.jpg",
+          "src": "/projects/crestfallen/crestfallen-3.jpg",
           "alt": ""
         }
       ],
-      "gifs": [
+      "videos": [
         {
-          "src": "projects/crestfallen/shadow-1-720p.gif",
+          "src": "/projects/crestfallen/shadows-1.webm",
           "alt": "",
-          "thumb": "projects/crestfallen/shadow-1-thumb.png"
+          "thumb": "/projects/crestfallen/shadows-1-thumb.jpg"
         },
         {
-          "src": "projects/crestfallen/shadow-2-720p.gif",
+          "src": "/projects/crestfallen/shadows-2.webm",
           "alt": "",
-          "thumb": "projects/crestfallen/shadow-2-thumb.png"
+          "thumb": "/projects/crestfallen/shadows-2-thumb.jpg"
         }
       ],
       "thumbnail": {
-        "src": "projects/crestfallen/crestfallen-1.png",
+        "src": "/projects/crestfallen/crestfallen-1.jpg",
         "alt": ""
       },
       "slug": "crestfallen-opengl",
@@ -73,24 +73,24 @@
       "colleagues": "Florian Drucker, Patrick Grassl, Felix Kaubek, Peter Nyikos, Michael Winkler",
       "images": [
         {
-          "src": "projects/cinemacurve/home.png",
+          "src": "/projects/cinemacurve/home.png",
           "alt": ""
         },
         {
-          "src": "projects/cinemacurve/movie-list.png",
+          "src": "/projects/cinemacurve/movie-list.png",
           "alt": ""
         },
         {
-          "src": "projects/cinemacurve/movie-edit.png",
+          "src": "/projects/cinemacurve/movie-edit.png",
           "alt": ""
         },
         {
-          "src": "projects/cinemacurve/newsletter.png",
+          "src": "/projects/cinemacurve/newsletter.png",
           "alt": ""
         }
       ],
       "thumbnail": {
-        "src": "projects/cinemacurve/home.png",
+        "src": "/projects/cinemacurve/home.png",
         "alt": ""
       },
       "slug": "cinemacurve",
@@ -99,7 +99,7 @@
     "crestfallen_mobile": {
       "title": "Crestfallen Mobile",
       "date": "03.2021 – 06.2021",
-      "description": "Crestfallen Mobile is a 2D-Platformer made within the \"Multimedia\" course at TU Vienna. Its goal was to learn the handling of multimedia content on the Android platform. It made the Top-10 Hall of Fame from a selection of 57 games!",
+      "description": "Crestfallen Mobile is a 2D-Platformer made within the \"Multimedia\" course at TU Vienna. Its goal was to learn the handling of multimedia content on the Android platform. It got selected for the Top-10 Hall of Fame from 57 games!",
       "experience": [
         "Was responsible for implementing all gameplay systems, a custom character controller, the scene structure, data persistence and UI.",
         "Using the Android Jetpack Suite for data persistence and responsive UI layout components."
@@ -108,50 +108,49 @@
         "Android Studio",
         "Android Jetpack",
         "Java",
-        "Gradle",
-        "SQLite"
+        "Gradle"
       ],
       "colleagues": "Michael Steinkellner",
       "images": [
         {
-          "src": "projects/crestfallen-mobile/Screenshot_8.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_8.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_2.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_2.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_1.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_1.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_9.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_9.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_3.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_3.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_4.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_4.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_5.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_5.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_6.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_6.png",
           "alt": ""
         },
         {
-          "src": "projects/crestfallen-mobile/Screenshot_7.png",
+          "src": "/projects/crestfallen-mobile/Screenshot_7.png",
           "alt": ""
         }
       ],
       "thumbnail": {
-        "src": "projects/crestfallen-mobile/Screenshot_1.png",
+        "src": "/projects/crestfallen-mobile/Screenshot_1.png",
         "alt": ""
       },
       "slug": "crestfallen-mobile",
@@ -169,12 +168,12 @@
       ],
       "images": [
         {
-          "src": "projects/crestfallen-logo.png",
+          "src": "/projects/crestfallen-logo.png",
           "alt": ""
         }
       ],
       "thumbnail": {
-        "src": "projects/crestfallen-logo.png",
+        "src": "/projects/crestfallen-logo.png",
         "alt": "Project thumbnail for crestfallen-opengl Versus."
       }
     }

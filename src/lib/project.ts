@@ -6,13 +6,13 @@ export type Project = {
     tech: string[],
     colleagues?: string,
     slug?: string,
-    thumbnail: Image,
-    images?: Image[],
-    gifs?: Image[],
+    thumbnail: Media,
+    images?: Media[],
+    videos?: Media[],
     border?: string
 }
 
-export type Image = {
+export type Media = {
     src: string,
     alt: string
     thumb?: string

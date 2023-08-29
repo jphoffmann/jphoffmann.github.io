@@ -9,9 +9,6 @@ const config = {
             assets: 'build',
             fallback: null
         }),
-        paths: {
-            base: "",
-        },
         alias: {
             $components: 'src/components',
         },
