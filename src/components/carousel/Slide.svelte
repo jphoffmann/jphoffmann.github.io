@@ -4,9 +4,7 @@
     export let attr = '';
     export let mediaClass = '';
 </script>
+<button aria-label="Click to view image in fullscreen" on:click>
+    <img on:load {src} {alt} title={attr} class={mediaClass}/>
+</button>
 
-{#key src}
-    <button aria-label="Click to view image in fullscreen" on:click>
-        <img on:load src={src} {alt} title={attr} class={mediaClass}/>
-    </button>
-{/key}

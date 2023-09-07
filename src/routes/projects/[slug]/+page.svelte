@@ -26,10 +26,9 @@
                         showCaptions={false}
                         showIndicators={false}
                         showThumbs={true}
-                        dark="{false}"
                         on:fullscreen={()=>{fullscreenImages = true}}
                         bind:itemShowingIndex={carouselImageIndex}
-                        mediaClass="{data.border === 'mobile' ? 'max-h-[400px] desktop:max-h-[600px]' : 'max-h-[400px] laptop:max-h-[600px]'} shadow-md"
+                        mediaClass="{data.border === 'mobile' ? 'aspect-[9/16] max-h-[400px] desktop:max-h-[600px]' : 'aspect-[16/9] max-h-[400px] laptop:max-h-[600px]'} shadow-md"
                         thumbClass="opacity-70  rounded-md shadow-md
                             {data.border === 'mobile' ? 'aspect-[9/16] min-w-[80px] laptop:min-w-[100px] desktop:min-w-[125px]' : 'aspect-[16/9] min-w-[160px] laptop:min-w-[200px] laptop:max-w-full desktop:min-w-[260px]'}"
                         thumbBtnClass="hover:scale-[1.03] transition duration-300 ease-in-out"
@@ -38,12 +37,11 @@
                     <Carousel
                             videos={data.videos}
                             images={data.images}
-                            bind:itemShowingIndex={carouselImageIndex}
+                            itemShowingIndex={carouselImageIndex}
                             showCaptions={false}
                             showIndicators={false}
                             showThumbs={false}
-                            dark="{true}"
-                            mediaClass="max-h-[80vh] max-w-[80vw] cursor-auto shadow-xl"
+                            mediaClass="bg-black max-h-[80vh] max-w-[80vw] cursor-auto shadow-xl"
                     />
                 </ImageModal>
             {:else}
@@ -56,7 +54,7 @@
                 </Draggable>
 
 
-                <ImageModal bind:open={fullscreenImages} outsideclose>
+                <ImageModal open={fullscreenImages} outsideclose>
                     <Draggable bind:scrollAnchorItem="{draggableImageIndex}" scrollSnapping>
                         {#each data.images as item}
                             <div class="min-w-full snap-center snap-always">

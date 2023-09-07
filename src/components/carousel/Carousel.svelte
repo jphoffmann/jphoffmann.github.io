@@ -9,13 +9,10 @@
     import Draggable from "$components/Draggable.svelte";
     import type {Media} from "$lib/project";
 
-
     export let id = 'default-carousel';
     export let showIndicators = true;
     export let showThumbs = true;
     export let slideControls = true;
-
-    export let dark = false;
 
     export let videos: Media[] = [];
     export let images: Media[];
@@ -78,7 +75,7 @@
 </script>
 
 {#if item}
-    <div {id} class="relative flex justify-center items-center" class:dark={dark} role="tabpanel">
+    <div {id} class="relative flex justify-center items-center" role="tabpanel">
         <div class="flex items-center justify-center h-full w-full">
             <svelte:component this="{item.component}" src="{item.media.src}" alt="{item.media.alt}" mediaClass="{mediaClass}" on:click={forwardImageClick}/>
         </div>
@@ -99,7 +96,7 @@
                     data-carousel-prev
             >
                 <span class="inline-flex justify-center items-center w-8 h-8 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:outline-none">
-                    <svg aria-hidden="true" class="w-5 h-5 text-white dark:text-gray-300" fill="none"
+                    <svg aria-hidden="true" class="w-5 h-5 text-white" fill="none"
                          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                     </svg>
@@ -112,7 +109,7 @@
                     data-carousel-next
             >
                 <span class="inline-flex justify-center items-center w-8 h-8 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:outline-none">
-                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300" fill="none"
+                    <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 " fill="none"
                          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>

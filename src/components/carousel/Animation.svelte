@@ -8,7 +8,7 @@
 </script>
 
 {#key src}
-    <video class={mediaClass} loop controls muted>
+    <video class="{mediaClass} aspect-video w-full" loop controls muted>
         <source {src} {type} />
         <track src={alt} kind="descriptions" {label} {srclang}/>
         Your browser does not support the video tag.
