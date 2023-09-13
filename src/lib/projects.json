@@ -16,35 +16,37 @@
         "Nvidia PhysX",
         "Blender"
       ],
-      "colleagues": "Michael Steinkellner",
       "images": [
         {
-          "src": "/projects/crestfallen/crestfallen-1.jpg",
-          "alt": ""
+          "src": "/projects/crestfallen/crestfallen-1-2023-2560.jpg",
+          "alt": "",
+          "thumb": "/projects/crestfallen/crestfallen-1-2023-640.jpg"
         },
         {
-          "src": "/projects/crestfallen/crestfallen-2.jpg",
-          "alt": ""
+          "src": "/projects/crestfallen/crestfallen-2-2023-2560.jpg",
+          "alt": "",
+          "thumb": "/projects/crestfallen/crestfallen-2-2023-640.jpg"
         },
         {
-          "src": "/projects/crestfallen/crestfallen-3.jpg",
-          "alt": ""
+          "src": "/projects/crestfallen/crestfallen-3-2023-2560.jpg",
+          "alt": "",
+          "thumb": "/projects/crestfallen/crestfallen-3-2023-640.jpg"
         }
       ],
       "videos": [
         {
-          "src": "/projects/crestfallen/shadows-1.webm",
+          "src": "/projects/crestfallen/crestfallen-trailer-2023.webm",
           "alt": "",
-          "thumb": "/projects/crestfallen/shadows-1-thumb.jpg"
+          "thumb": "/projects/crestfallen/crestfallen-trailer-2023-thumb.jpg"
         },
         {
-          "src": "/projects/crestfallen/shadows-2.webm",
+          "src": "/projects/crestfallen/shadows-1-2023.webm",
           "alt": "",
-          "thumb": "/projects/crestfallen/shadows-2-thumb.jpg"
+          "thumb": "/projects/crestfallen/shadows-1-2023-thumb.jpg"
         }
       ],
       "thumbnail": {
-        "src": "/projects/crestfallen/crestfallen-1.jpg",
+        "src": "/projects/crestfallen/crestfallen-1-2023-1280.jpg",
         "alt": ""
       },
       "slug": "crestfallen-opengl",
@@ -70,7 +72,6 @@
         "JUnit",
         "H2 SQL Database"
       ],
-      "colleagues": "Florian Drucker, Patrick Grassl, Felix Kaubek, Peter Nyikos, Michael Winkler",
       "images": [
         {
           "src": "/projects/cinemacurve/home.png",
@@ -110,7 +111,6 @@
         "Java",
         "Gradle"
       ],
-      "colleagues": "Michael Steinkellner",
       "images": [
         {
           "src": "/projects/crestfallen-mobile/Screenshot_8.png",
